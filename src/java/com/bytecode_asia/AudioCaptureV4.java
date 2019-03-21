@@ -1,5 +1,5 @@
 
-/*File AudioCaptureV2b.java
+/*File AudioCaptureV4.java
 This program demonstrates the capture and subsequent playback of audio data.
 
 A GUI appears on the screen containing the following buttons:
@@ -17,13 +17,15 @@ Playback begins when the user clicks the Playback button.
 Tested using SDK 1.4.0 under Win2000
 **************************************/
 
+package com.bytecode_asia;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import javax.sound.sampled.*;
 
-public class AudioCaptureV3c {
+public class AudioCaptureV4 {
 
     boolean stopCapture = false;
     ByteArrayOutputStream byteArrayOutputStream;
@@ -38,19 +40,20 @@ public class AudioCaptureV3c {
 
     // Default values
     float sampleRateG = 8000.0F;
-    int bitsG = 16;
+    int bitsG = 8;
     int channelsG = 1;
     boolean signedG = true;
     boolean bigEndianG = false;
     int duration = 2;
     int ring_duration = 10;
-    boolean defaultSettings = true;
+    boolean defaultMixer = true;
 
-    public AudioCaptureV3c() {// constructor
+    public AudioCaptureV4() {// constructor
 
     }// end constructor
 
-    public AudioCaptureV3c(int mixer, float sr, int bits, int chnls, boolean sign, boolean endian, int dur,
+    // With user selected mixer
+    public AudioCaptureV4(int mixer, float sr, int bits, int chnls, boolean sign, boolean endian, int dur,
             int ring_dur) {
         this();
         mixer_selector = mixer;
@@ -61,9 +64,23 @@ public class AudioCaptureV3c {
         bigEndianG = endian;
         duration = dur;
         ring_duration = ring_dur;
-        defaultSettings = false;
-
+        defaultMixer = false;
     }
+
+    // With default mixer
+    public AudioCaptureV4(float sr, int bits, int chnls, boolean sign, boolean endian, int dur,
+            int ring_dur) {
+        this();
+        sampleRateG = sr;
+        bitsG = bits;
+        channelsG = chnls;
+        signedG = sign;
+        bigEndianG = endian;
+        duration = dur;
+        ring_duration = ring_dur;
+        defaultMixer = true;
+    }
+    
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +91,7 @@ public class AudioCaptureV3c {
         String[] mymixers = new String[mixerInfo.length];
         for (int cnt = 0; cnt < mixerInfo.length; cnt++) {
 
-            mymixers[cnt] = Integer.toString(cnt) + ": " + mixerInfo[cnt].getName();
+            mymixers[cnt] = Integer.toString(cnt) + ": " + mixerInfo[cnt].toString();
 
         }
 
@@ -118,7 +135,7 @@ public class AudioCaptureV3c {
                 audioFormat = getAudioFormat();
                 DataLine.Info dataLineInfo = new DataLine.Info(TargetDataLine.class, audioFormat);
 
-                if (defaultSettings == true){
+                if (defaultMixer == true){
                     targetDataLine = (TargetDataLine) AudioSystem.getLine(dataLineInfo); 
                 } else{
                     Mixer mixer = AudioSystem.getMixer(mixerInfo[mixer_selector]);

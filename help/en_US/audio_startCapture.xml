@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from audio_startCapture.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="audio_startCapture" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>audio_startCapture</refname>
+    <refpurpose>Begins capturing audio</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>line :</term>
+            <listitem><para> Java object. Audio line.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function starts the audio capturing process (done in the background) on a given audio line. The audio is continuously captured but the buffer will only keep the latest audio data for a certain duration before being overwritten by newer data. The buffer duration is set when creating the audio line using audio_getLine.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Requires a microphone
+line = audio_getLine(16000,16,1,%t,%t,2,10);
+audio_startCapture(line)
+// The audio capture process has started.
+// Feel free to say something before running the next line of code.
+audio_snapshot(line)
+audio_playSnapshot(line)
+audio_stopCapture(line)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="audio_getLine">audio_getLine</link></member>
+   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
+   <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
+   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
+   <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
+   <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
+   <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Joshua T.</member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from audio_getMixers.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="audio_getMixers" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>audio_getMixers</refname>
+    <refpurpose>Obtain a list of available mixers</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>y :</term>
+            <listitem><para> A string array of the available mixers</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function returns a array of mixers that are available. Each mixer has a ID which can be used to select that particular mixer. Do note that a mixer's ID is not fixed and will change when devices are added or removed.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+y = audio_getMixers();
+disp(y)
+
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="audio_getLine">audio_getLine</link></member>
+   <member><link linkend="audio_startCapture">audio_startCapture</link></member>
+   <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
+   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
+   <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
+   <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
+   <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Joshua T.</member>
+   </simplelist>
+</refsection>
+</refentry>

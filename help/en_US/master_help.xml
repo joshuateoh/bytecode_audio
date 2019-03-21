@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!--Begin Entities-->
+<!ENTITY a41e8bf58ca6ba140e874d12e8ae35945 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getLine.xml">
+<!ENTITY aa3d73c35cee5d4cd3e628b2ab1d0dfd2 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getMixers.xml">
+<!ENTITY a27ed49c9c43dc553f62ca726e2ba34a3 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getSnapshot.xml">
+<!ENTITY a4fc6f6e2c21ae87f69d9f5d56de07d33 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_playSnapshot.xml">
+<!ENTITY a3ffe0a6ae73ffadac651c5cc9243cb7d SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_saveSnapshot.xml">
+<!ENTITY a61ef7fd7feb35ac899c0085b96a869fa SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_snapshot.xml">
+<!ENTITY ab7af7319179c46e537c059d0ac948b64 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_startCapture.xml">
+<!ENTITY a9b020952ef73cb45a029324089c2896a SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_stopCapture.xml">
+<!--End Entities-->
+]>
+<book version="5.0-subset Scilab" xml:lang="en_US"
+      xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:mml="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info xml:id='bytecode_audio_manual'>
+    <title>bytecode_audio</title>
+  </info>
+
+<part xml:id='section_0e1dfd7788a430cec0c2605e54ef1124'>
+<title>bytecode_audio</title>
+&a41e8bf58ca6ba140e874d12e8ae35945;
+&aa3d73c35cee5d4cd3e628b2ab1d0dfd2;
+&a27ed49c9c43dc553f62ca726e2ba34a3;
+&a4fc6f6e2c21ae87f69d9f5d56de07d33;
+&a3ffe0a6ae73ffadac651c5cc9243cb7d;
+&a61ef7fd7feb35ac899c0085b96a869fa;
+&ab7af7319179c46e537c059d0ac948b64;
+&a9b020952ef73cb45a029324089c2896a;
+</part>
+</book>

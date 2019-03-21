@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from audio_getLine.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="audio_getLine" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>audio_getLine</refname>
+    <refpurpose>Obtains an audio line</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>sr :</term>
+            <listitem><para> Double. Sampling rate</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>bits :</term>
+            <listitem><para> Integer. Number of bits per sample</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>chnls :</term>
+            <listitem><para> Integer. Number of channels.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>signed :</term>
+            <listitem><para> Boolean. True means signed data.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>endian :</term>
+            <listitem><para> Boolean. True means stored in big-endian.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>snap_dur :</term>
+            <listitem><para> Integer. Duration of snapshot.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ring_dur :</term>
+            <listitem><para> Integer. Duration of ring buffer.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>mixer :</term>
+            <listitem><para> Integer. Optional. Mixer ID</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>line :</term>
+            <listitem><para> Java object. Audio line.</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function obtains a audio line that can then be used to capture audio. With no arguments, a default audio format (8kHz, 8 bits, 1 channel, signed, little-endian) will be used with a compatible mixer at a snapshot duration of 2s and a buffer of 10s. A specific mixer can be selected using its ID (obtained from audio_getMixers) as an additional input.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Requires a microphone
+line = audio_getLine(16000,16,1,%t,%t,2,10);
+audio_startCapture(line)
+messagebox("Please say something and then click OK to continue","modal");
+audio_snapshot(line)
+audio_playSnapshot(line)
+audio_stopCapture(line)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
+   <member><link linkend="audio_startCapture">audio_startCapture</link></member>
+   <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
+   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
+   <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
+   <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
+   <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Joshua T.</member>
+   </simplelist>
+</refsection>
+</refentry>

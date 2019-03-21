@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+<tocitem target="index" text="bytecode_audio">
+<tocitem target="section_0e1dfd7788a430cec0c2605e54ef1124" text="bytecode_audio">
+<tocitem target="audio_getLine" text="audio_getLine"/>
+<tocitem target="audio_getMixers" text="audio_getMixers"/>
+<tocitem target="audio_getSnapshot" text="audio_getSnapshot"/>
+<tocitem target="audio_playSnapshot" text="audio_playSnapshot"/>
+<tocitem target="audio_saveSnapshot" text="audio_saveSnapshot"/>
+<tocitem target="audio_snapshot" text="audio_snapshot"/>
+<tocitem target="audio_startCapture" text="audio_startCapture"/>
+<tocitem target="audio_stopCapture" text="audio_stopCapture"/>
+</tocitem>
+</tocitem>
+</toc>
