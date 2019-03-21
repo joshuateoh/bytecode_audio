@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from audio_getSnapshot.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="audio_getSnapshot" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>audio_getSnapshot</refname>
+    <refpurpose>Imports the audio snapshot data into Scilab</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>line :</term>
+            <listitem><para> Java object. Audio line</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>data :</term>
+            <listitem><para> Matrix array. Audio snapshot data</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function imports the audio snapshot data into a Scilab variable.The audio snapshot was taken using the function audio_snapshot.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Requires a microphone
+line = audio_getLine(16000,16,1,%t,%t,2,10);
+audio_startCapture(line)
+messagebox("Please say something and then click OK to continue","modal");
+audio_snapshot(line)
+data = audio_getSnapshot(line)
+audio_stopCapture(line)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
+   <member><link linkend="audio_getLine">audio_getLine</link></member>
+   <member><link linkend="audio_startCapture">audio_startCapture</link></member>
+   <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
+   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
+   <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
+   <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Joshua T.</member>
+   </simplelist>
+</refsection>
+</refentry>

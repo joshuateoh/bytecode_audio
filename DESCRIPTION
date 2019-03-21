@@ -1,0 +1,28 @@
+Toolbox: bytecode_audio
+
+Title: Bytecode Audio Pack
+
+Summary: Audio functions for Scilab
+
+Version: 1.0.0
+
+Author: Joshua Teoh
+  Aditap Khonglun  
+  Tan Chin Luh
+
+Maintainer: Joshua Teoh <joshua.teoh@bytecode-asia.com>
+
+Category: Scilab development
+
+Entity: Bytecode
+
+WebSite: https://www.bytecode-asia.com/
+
+License: GPL 2.0
+
+ScilabVersion: >= 6.0
+
+Date: 2019-03-15
+
+Description: This module is developed by Bytecode to allow audio recording inside SCILAB.
+

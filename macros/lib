@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scilablib name="bytecode_audiolib">
+  <macro name="audio_getLine" file="audio_getLine.bin" md5="b9f40779870385a57fe948e4f4349a87"/>
+  <macro name="audio_getMixers" file="audio_getMixers.bin" md5="546356ea8e308c794a6dd1b02aedaf82"/>
+  <macro name="audio_getSnapshot" file="audio_getSnapshot.bin" md5="e506492446f06689e5318cf55fd9ff48"/>
+  <macro name="audio_playSnapshot" file="audio_playSnapshot.bin" md5="e766ce9fd7f44c0e10541cca90099529"/>
+  <macro name="audio_saveSnapshot" file="audio_saveSnapshot.bin" md5="891cc94e0758104129a99ad8fd0a0a0c"/>
+  <macro name="audio_snapshot" file="audio_snapshot.bin" md5="ae2807660409faffa06ece2f93b8e882"/>
+  <macro name="audio_startCapture" file="audio_startCapture.bin" md5="cf3b9d2eac56472fcd0efa299295c404"/>
+  <macro name="audio_stopCapture" file="audio_stopCapture.bin" md5="0c5b4f71539c9e35a4fa72d6e25190dd"/>
+</scilablib>
