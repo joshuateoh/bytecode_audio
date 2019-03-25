@@ -45,6 +45,7 @@ function line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,vara
 //    audio_stopCapture(line)
 //
 // See also
+//    audio_checkMixer
 //    audio_getMixers
 //    audio_startCapture
 //    audio_stopCapture

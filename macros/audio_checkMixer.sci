@@ -1,5 +1,5 @@
-function audio_saveSnapshot(line,wavfile)
-// Saves audio snapshot into a file
+function res = audio_checkMixer(mixerID)
+// Check the lines supported by a selected mixer.
 //
 //    Copyright 2019 Bytecode.
 //    
@@ -17,37 +17,31 @@ function audio_saveSnapshot(line,wavfile)
 //    along with this program.  If not, see <http://www.gnu.org/licenses/
 //
 // Calling Sequence
-//     audio_saveSnapshot(line,wavfile)
+//     res = audio_checkMixer(mixerID)
 //
 // Parameters
-//     line : Java object. Audio line
-//     wavfile : String. Name of wav file that will used to save the audio
+//     mixerID : Integer. Mixer ID.
+//     res : String array. Status of the lines supported.
 //
 // Description
-//     This function saves the audio snapshot data into a specified file. The audio will be saved as a wav file.
+//     A mixer generally supports a line that connects to either the microphone or speaker. This functions determines the line that is supported by the mixer.
 //
 // Examples
-//    // Requires a microphone 
-//    line = audio_getLine(16000,16,1,%t,%t,2,10);
-//    audio_startCapture(line)
-//    messagebox("Please say something and then click OK to continue","modal");
-//    audio_snapshot(line)
-//    audio_saveSnapshot(line,TMPDIR+"\myaudio.wav")
-//    [audiodata,fs]=wavread(TMPDIR+"\myaudio.wav");
-//    sound(audiodata,fs)
-//    audio_stopCapture(line)
+//    res = audio_checkMixer(0);
+//    disp(res)
 //
 // See also
-//    audio_checkMixer
-//    audio_getMixers
 //    audio_getLine
+//    audio_getMixers
 //    audio_startCapture
 //    audio_stopCapture
 //    audio_snapshot
 //    audio_playSnapshot
 //    audio_getSnapshot
+//    audio_saveSnapshot
 //
 // Authors
 //     Joshua T. 
-    line.getAudioData(wavfile);
+    jimport com.bytecode_asia.AudioCaptureV4
+    res =  AudioCaptureV4.checkMixer(mixerID)';
 endfunction

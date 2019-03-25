@@ -2,11 +2,11 @@
 
 <!--
  *
- * This help file was generated from audio_snapshot.sci using help_from_sci().
+ * This help file was generated from audio_checkMixer.sci using help_from_sci().
  *
  -->
 
-<refentry version="5.0-subset Scilab" xml:id="audio_snapshot" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="audio_checkMixer" xml:lang="en"
           xmlns="http://docbook.org/ns/docbook"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svg="http://www.w3.org/2000/svg"
@@ -16,8 +16,8 @@
           xmlns:db="http://docbook.org/ns/docbook">
 
   <refnamediv>
-    <refname>audio_snapshot</refname>
-    <refpurpose>Obtain a snapshot of the audio data</refpurpose>
+    <refname>audio_checkMixer</refname>
+    <refpurpose>Check the lines supported by a selected mixer.</refpurpose>
   </refnamediv>
 
 
@@ -25,8 +25,12 @@
    <title>Parameters</title>
    <variablelist>
         <varlistentry>
-            <term>line :</term>
-            <listitem><para> Java object. Audio line.</para></listitem>
+            <term>mixerID :</term>
+            <listitem><para> Integer. Mixer ID.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>res :</term>
+            <listitem><para> String array. Status of the lines supported.</para></listitem>
         </varlistentry>
    </variablelist>
 </refsection>
@@ -34,7 +38,7 @@
 <refsection>
    <title>Description</title>
    <para>
-This function obtains a specific duration of the latest audio data stored in the buffer. This data can then be played, stored as a variable or saved into a file. The duration of the snapshot is set when creating the audio line.
+A mixer generally supports a line that connects to either the microphone or speaker. This functions determines the line that is supported by the mixer.
    </para>
    <para>
 </para>
@@ -43,13 +47,8 @@ This function obtains a specific duration of the latest audio data stored in the
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
-// Requires a microphone
-line = audio_getLine(16000,16,1,%t,%t,2,10);
-audio_startCapture(line)
-messagebox("Please say something and then click OK to continue","modal");
-audio_snapshot(line)
-audio_playSnapshot(line)
-audio_stopCapture(line)
+res = audio_checkMixer(0);
+disp(res)
 
    ]]></programlisting>
 </refsection>
@@ -57,11 +56,11 @@ audio_stopCapture(line)
 <refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
-   <member><link linkend="audio_checkMixer">audio_checkMixer</link></member>
-   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
    <member><link linkend="audio_getLine">audio_getLine</link></member>
+   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
    <member><link linkend="audio_startCapture">audio_startCapture</link></member>
    <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
+   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
    <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
    <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
    <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>

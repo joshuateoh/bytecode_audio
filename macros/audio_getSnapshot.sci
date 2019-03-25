@@ -36,6 +36,7 @@ function data=audio_getSnapshot(line)
 //    audio_stopCapture(line)
 //
 // See also
+//    audio_checkMixer
 //    audio_getMixers
 //    audio_getLine
 //    audio_startCapture

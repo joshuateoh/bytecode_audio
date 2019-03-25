@@ -31,6 +31,7 @@ function y = audio_getMixers()
 //    
 //
 // See also
+//    audio_checkMixer
 //    audio_getLine
 //    audio_startCapture
 //    audio_stopCapture

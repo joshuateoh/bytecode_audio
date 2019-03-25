@@ -1,3 +1,21 @@
+// Changelog
+// Version 4b
+// Trying to fix crashes (just comment out all the System.exit)
+// Now I want the error info in Scilab.
+// Converting capture from void to a string
+// Converted captureAudio from void to String
+// The return message will depend on whether capturing is a success or not:
+//  OK - success
+//  exceptions - send the exception class
+//  RUNNING - capture has already started previously
+//
+// On the Scilab side
+// audio_startCapture now reads the messages and output a corresponding message
+// Scilab no longer shuts down and will instead tell if the capture has started or not
+
+// Added a static checkMixer method
+// this is to check if which line is supported
+// Added a scilab function too.
 
 /*File AudioCaptureV4.java
 This program demonstrates the capture and subsequent playback of audio data.
@@ -85,6 +103,35 @@ public class AudioCaptureV4 {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // check whether a mixer is compatible with TargetDataLine and SourceDataLine
+    public static String[] checkMixer(int mixerID){
+        String[] mixerresult = new String[3];
+        Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
+        mixerresult[0] = mixerInfo[mixerID].toString();
+        Mixer checkmixer = AudioSystem.getMixer(mixerInfo[mixerID]);
+        
+        AudioFormat audioFormat = new AudioFormat(8000.0F, 8, 1, true, false);
+
+        DataLine.Info dataLineInfo_target = new DataLine.Info(TargetDataLine.class, audioFormat);
+        
+        if(checkmixer.isLineSupported(dataLineInfo_target)){
+            mixerresult[1] = "Microphone line: Supported";
+        } else {
+            mixerresult[1] = "Microphone line: Not Supported";
+        }
+
+        DataLine.Info dataLineInfo_source = new DataLine.Info(SourceDataLine.class, audioFormat);
+        if(checkmixer.isLineSupported(dataLineInfo_source)){
+            mixerresult[2] = "Speaker line: Supported";
+        } else {
+            mixerresult[2] = "Speaker line: Not Supported";
+        }
+
+        return mixerresult;
+
+
+    }
+    
     public static String[] listMixers() {
 
         Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
@@ -120,16 +167,18 @@ public class AudioCaptureV4 {
 
     // This method captures audio input from a microphone and saves it in a
     // ByteArrayOutputStream object.
-    public void captureAudio() {
+    public String captureAudio() {
 
         if (captureRunning == true) {
             // Capture is already running
             // do nothing
+            // indicate that it is running
+            return "RUNNING";
         } else {
             captureRunning = true;
 
             try {
-
+                
                 // Get everything set up for capture
                 Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
                 audioFormat = getAudioFormat();
@@ -151,9 +200,26 @@ public class AudioCaptureV4 {
                 captureThread.start();
             } catch (Exception e) {
                 System.out.println(e);
-                System.exit(0);
+                //Throwable cause = e.getCause();
+                //System.out.println("getCause: ");
+                //System.out.println(cause);
+                //System.out.println("Localized Message: ");
+                //System.out.println(e.getLocalizedMessage());
+                //System.out.println("Message: ");
+                //System.out.println(e.getMessage());
+                //System.out.println("toString: ");
+                //System.out.println(e.toString());
+                //System.out.println("Class :");
+                //System.out.println(e.getClass());
+                captureRunning = false;
+
+                //System.exit(0);
+                return e.getClass().toString();
             } // end catch
+            return "OK";
         }
+
+        
     }// end captureAudio method
 
     public byte[] getAudioData() {
@@ -215,7 +281,7 @@ public class AudioCaptureV4 {
 
             } catch (Exception e) {
                 System.out.println(e);
-                System.exit(0);
+                //System.exit(0);
             } // end catch
         } // end of else
     }// end playAudio
@@ -226,6 +292,7 @@ public class AudioCaptureV4 {
         // Maximum buffer from line is 1 second
         // sample rate x bytes per sample x nbr of channels
         int linebuffer = (int) sampleRateG * (bitsG / 8) * channelsG;
+        
 
         byte tempBuffer[] = new byte[linebuffer];
 
