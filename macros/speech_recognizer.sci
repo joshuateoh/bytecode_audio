@@ -15,5 +15,8 @@ function y = speech_recognizer(config)
     res  = recog.getResult()
     
     temp=res.getHypothesis()
+    recog.stopRecognition()
+    line.stop();
+    line.close();
     
 endfunction
