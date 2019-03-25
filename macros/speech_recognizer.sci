@@ -9,12 +9,13 @@ function y = speech_recognizer(config)
     line = AudioSystem.getTargetDataLine(myformat);
     line.open();
     inputStream = AudioInputStream.new(line);
+    line.start();
     
     recog.startRecognition(inputStream);
-    disp("Please say a word found in the dictionary")
+    disp("Please say a word that is in the dictionary")
     res  = recog.getResult()
     
-    temp=res.getHypothesis()
+    y=res.getHypothesis()
     recog.stopRecognition()
     line.stop();
     line.close();
