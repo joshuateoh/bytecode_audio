@@ -1,6 +1,6 @@
 <html><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>audio_getMixers</title>
+    <title>audio_checkMixer</title>
     <style type="text/css" media="all">
       @import url("scilab_code.css");
       @import url("xml_code.css");
@@ -12,7 +12,7 @@
     <div class="manualnavbar">
     <table width="100%"><tr>
       <td width="30%">
-    	<span class="previous"><a href="audio_getLine.html">&lt;&lt; audio_getLine</a></span>
+    	<span class="previous"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">&lt;&lt; bytecode_audio</a></span>
 
       </td>
       <td width="40%" class="center">
@@ -20,7 +20,7 @@
 
       </td>
       <td width="30%" class="next">
-      	<span class="next"><a href="audio_getSnapshot.html">audio_getSnapshot &gt;&gt;</a></span>
+      	<span class="next"><a href="audio_getLine.html">audio_getLine &gt;&gt;</a></span>
 
       </td>
     </tr></table>
@@ -29,28 +29,30 @@
 
 
 
-    <span class="path" dir="ltr"><a href="index.html">bytecode_audio</a> &gt;&gt; <a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a> &gt; audio_getMixers</span>
+    <span class="path" dir="ltr"><a href="index.html">bytecode_audio</a> &gt;&gt; <a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a> &gt; audio_checkMixer</span>
 
     <br /><br />
-    <div class="refnamediv"><h1 class="refname">audio_getMixers</h1>
-    <p class="refpurpose">Obtain a list of available mixers</p></div>
+    <div class="refnamediv"><h1 class="refname">audio_checkMixer</h1>
+    <p class="refpurpose">Check the lines supported by a selected mixer.</p></div>
 
 
 <div class="refsection"><h3 class="title">Parameters</h3>
-   <dl><dt><span class="term">y :</span>
-            <dd><p class="para">A string array of the available mixers</p></dd></dt></dl></div>
+   <dl><dt><span class="term">mixerID :</span>
+            <dd><p class="para">Integer. Mixer ID.</p></dd></dt>
+        <dt><span class="term">res :</span>
+            <dd><p class="para">String array. Status of the lines supported.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This function returns a array of mixers that are available. Each mixer has a ID which can be used to select that particular mixer. Do note that a mixer&#0039;s ID is not fixed and will change when devices are added or removed.</p>
+   <p class="para">A mixer generally supports a line that connects to either the microphone or speaker. This functions determines the line that is supported by the mixer.</p>
    <p class="para"></p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">y</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getMixers</span><span class="scilabopenclose">(</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
-<a class="scilabcommand" href="scilab://disp">disp</a><span class="scilabopenclose">(</span><span class="scilabid">y</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">res</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_checkMixer</span><span class="scilabopenclose">(</span><span class="scilabnumber">0</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<a class="scilabcommand" href="scilab://disp">disp</a><span class="scilabopenclose">(</span><span class="scilabid">res</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">See also</h3>
-   <ul class="itemizedlist"><li class="member"><a href="audio_checkMixer.html" class="link">audio_checkMixer</a> &#8212; Check the lines supported by a selected mixer.</li>
-   <li class="member"><a href="audio_getLine.html" class="link">audio_getLine</a> &#8212; Obtains an audio line</li>
+   <ul class="itemizedlist"><li class="member"><a href="audio_getLine.html" class="link">audio_getLine</a> &#8212; Obtains an audio line</li>
+   <li class="member"><a href="audio_getMixers.html" class="link">audio_getMixers</a> &#8212; Obtain a list of available mixers</li>
    <li class="member"><a href="audio_startCapture.html" class="link">audio_startCapture</a> &#8212; Begins capturing audio</li>
    <li class="member"><a href="audio_stopCapture.html" class="link">audio_stopCapture</a> &#8212; Stops the audio capturing process</li>
    <li class="member"><a href="audio_snapshot.html" class="link">audio_snapshot</a> &#8212; Obtain a snapshot of the audio data</li>
@@ -67,7 +69,7 @@
     <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
 <tr>
       <td width="30%">
-    	<span class="previous"><a href="audio_getLine.html">&lt;&lt; audio_getLine</a></span>
+    	<span class="previous"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">&lt;&lt; bytecode_audio</a></span>
 
       </td>
       <td width="40%" class="center">
@@ -75,7 +77,7 @@
 
       </td>
       <td width="30%" class="next">
-      	<span class="next"><a href="audio_getSnapshot.html">audio_getSnapshot &gt;&gt;</a></span>
+      	<span class="next"><a href="audio_getLine.html">audio_getLine &gt;&gt;</a></span>
 
       </td>
     </tr></table>

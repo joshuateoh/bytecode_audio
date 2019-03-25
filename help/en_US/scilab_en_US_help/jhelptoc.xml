@@ -3,6 +3,7 @@
 <toc version="1.0">
 <tocitem target="index" text="bytecode_audio">
 <tocitem target="section_0e1dfd7788a430cec0c2605e54ef1124" text="bytecode_audio">
+<tocitem target="audio_checkMixer" text="audio_checkMixer"/>
 <tocitem target="audio_getLine" text="audio_getLine"/>
 <tocitem target="audio_getMixers" text="audio_getMixers"/>
 <tocitem target="audio_getSnapshot" text="audio_getSnapshot"/>

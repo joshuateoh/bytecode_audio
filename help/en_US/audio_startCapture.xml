@@ -58,6 +58,7 @@ audio_stopCapture(line)
 <refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
+   <member><link linkend="audio_checkMixer">audio_checkMixer</link></member>
    <member><link linkend="audio_getLine">audio_getLine</link></member>
    <member><link linkend="audio_getMixers">audio_getMixers</link></member>
    <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>

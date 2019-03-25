@@ -36,6 +36,7 @@ function audio_startCapture(line)
 //    audio_stopCapture(line)
 //
 // See also
+//    audio_checkMixer
 //    audio_getLine
 //    audio_getMixers
 //    audio_stopCapture
@@ -47,8 +48,25 @@ function audio_startCapture(line)
 // Authors
 //     Joshua T. 
 
-    line.captureAudio()
-    disp("Audio is now being captured. Remember to stop capturing when done.")
+    msg = line.captureAudio()
+    
+    if msg == "OK" then
+        disp("Audio is now being captured. Remember to stop capturing when done.")
+    elseif msg == "RUNNING" then
+        disp("Audio capture is already running.")
+    else
+        temp = strsubst(msg,'/.*\./','','r');
+        select temp
+        case "LineUnavailableException" then
+            err_msg = "%s: LineUnavailableException - the line is currently in used\n"
+            error(msprintf(err_msg,"audio_startCapture"))
+        else
+            err_smg = "%s: "+temp+"\n"
+            error(msprintf(err_msg,"audio_startCapture"))
+        end
+        
+    end
+    
 endfunction
 
 
