@@ -1,5 +1,5 @@
 function common_func()
-// This is SPeech Recog
+// This is SPeech Recog 2
 //
 //    Copyright 2019 Bytecode.
 //    
