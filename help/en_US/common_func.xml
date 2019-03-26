@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from common_func.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="common_func" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>common_func</refname>
+    <refpurpose>This is SPeech Recog</refpurpose>
+  </refnamediv>
+
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>ip1 :</term>
+            <listitem><para> Input1 description</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>ip1 :</term>
+            <listitem><para> Input2 description</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>op1 :</term>
+            <listitem><para> Output1 description</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>op1 :</term>
+            <listitem><para> Output2 description</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function is the first macro in bytecode_edupack
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+[op1,op2] = bytetest(10,10);
+disp(op1);
+disp(op2);
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Tan C.L.</member>
+   </simplelist>
+</refsection>
+</refentry>
