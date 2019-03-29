@@ -6,7 +6,7 @@ bytecode_audio (0.1.0)
  -- Joshua<joshua.teoh@bytecode-asia.com>  Fri, 15 Mar 2019 13:00:00 +0800
 
 
-bytecode_audio (1.0.0)
-    * A functioning toolbox
+bytecode_audio (0.0.1)
+    * Converted to a toolbox
 
 -- Joshua<joshua.teoh@bytecode-asia.com>  Fri, 21 Mar 2019 14:00:00 +0800

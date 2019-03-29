@@ -12,4 +12,6 @@
 <mapID target="audio_snapshot" url="audio_snapshot.html"/>
 <mapID target="audio_startCapture" url="audio_startCapture.html"/>
 <mapID target="audio_stopCapture" url="audio_stopCapture.html"/>
+<mapID target="recognizer_setup" url="recognizer_setup.html"/>
+<mapID target="speech_recognizer" url="speech_recognizer.html"/>
 </map>

@@ -10,6 +10,8 @@
 <!ENTITY a61ef7fd7feb35ac899c0085b96a869fa SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_snapshot.xml">
 <!ENTITY ab7af7319179c46e537c059d0ac948b64 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_startCapture.xml">
 <!ENTITY a9b020952ef73cb45a029324089c2896a SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_stopCapture.xml">
+<!ENTITY adb84399ddbfd0daa831f6f49dfbf4f55 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/recognizer_setup.xml">
+<!ENTITY a392cd89e0809959c7dbf995a9ebee9ee SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/speech_recognizer.xml">
 <!--End Entities-->
 ]>
 <book version="5.0-subset Scilab" xml:lang="en_US"
@@ -35,5 +37,7 @@
 &a61ef7fd7feb35ac899c0085b96a869fa;
 &ab7af7319179c46e537c059d0ac948b64;
 &a9b020952ef73cb45a029324089c2896a;
+&adb84399ddbfd0daa831f6f49dfbf4f55;
+&a392cd89e0809959c7dbf995a9ebee9ee;
 </part>
 </book>
