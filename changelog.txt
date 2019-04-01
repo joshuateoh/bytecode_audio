@@ -2,6 +2,7 @@ changelog of the bytecode_audio
 
 bytecode_audio (0.1.0)
     * Skeleton Created
+    * Testing
 
  -- Joshua<joshua.teoh@bytecode-asia.com>  Fri, 15 Mar 2019 13:00:00 +0800
 
