@@ -222,8 +222,30 @@ public class AudioCaptureV4 {
         
     }// end captureAudio method
 
-    public byte[] getAudioData() {
-        return audioData;
+ public static short[] byteToShort(byte[] byteData, boolean writeLittleEndian) { 
+  short[] data = new short[byteData.length / 2]; 
+  int size = data.length; 
+  byte lb, hb; 
+  if (writeLittleEndian) { 
+   for (int i = 0; i < size; i++) { 
+    lb = byteData[i * 2]; 
+    hb = byteData[i * 2 + 1]; 
+    data[i] = (short) (((short) hb << 8) | lb & 0xff); 
+   } 
+  } else { 
+   for (int i = 0; i < size; i++) { 
+    lb = byteData[i * 2]; 
+    hb = byteData[i * 2 + 1]; 
+    data[i] = (short) (((short) lb << 8) | hb & 0xff); 
+   } 
+ 
+  } 
+  return data; 
+ } 
+ 
+    public short[] getAudioData() {
+        //return audioData;
+        return byteToShort(audioData, false);
     }
 
     public void getAudioData(String filepath) {
@@ -253,6 +275,7 @@ public class AudioCaptureV4 {
         // duration x sr x bytes per sample x nbr of channels
         int audioDataSize = duration * (int) sampleRateG * (bitsG / 8) * channelsG;
         audioData = new byte[audioDataSize];
+//        audioData = new int[audioDataSize];
         int mytemp = ringbuffer.getLatest(audioData);
 
     }

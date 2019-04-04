@@ -7,8 +7,6 @@ chdir(scriptdir);
 // ------------------------------------------------------
 jarFilePath = fullfile(scriptdir, '..\..\jar\com.bytecode_asia.jar');
 javaclasspath(fullpath(jarFilePath));
-jarFilePath = fullfile(scriptdir, '..\..\jar\sphinx4-core-1.0-20150630.174404-9.jar');
-javaclasspath(fullpath(jarFilePath));
 // ------------------------------------------------------
 chdir(curdir);
 clear curdir;
