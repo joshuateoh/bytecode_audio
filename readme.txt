@@ -24,5 +24,6 @@ TODO
 - Text to Speech feature is planned to be added in the future.
 - audio_snapshot - had the option set snapshot duration using number of bytes
 - Add a function to grab the entire buffer data instead of just the snapshot
+- Add a function to kill all lines
 
 
