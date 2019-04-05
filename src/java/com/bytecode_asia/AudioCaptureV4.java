@@ -314,7 +314,8 @@ public class AudioCaptureV4 {
     class CaptureThread extends Thread {
         // Maximum buffer from line is 1 second
         // sample rate x bytes per sample x nbr of channels
-        int linebuffer = (int) sampleRateG * (bitsG / 8) * channelsG;
+        // Read smaller amount of buffer if snapshot is used at a higher rate.
+        int linebuffer = (int) sampleRateG * (bitsG / 8) * channelsG / 1000;
         
 
         byte tempBuffer[] = new byte[linebuffer];

@@ -1,4 +1,4 @@
-Bytecode Audio Pack Version 0.1
+﻿Bytecode Audio Pack Version 0.1
 
 This module is developed by Bytecode to allow audio recording inside SCILAB.
 
@@ -22,5 +22,6 @@ Do note that the spinx4 jar file inside the jar folder is not detected by the bu
 TODO
 - Improve the speech recognition functions and add in help files for the speech recognition
 - Text to Speech feature is planned to be added in the future.
+- audio_snapshot - had the option set snapshot duration using number of bytes
 
 
