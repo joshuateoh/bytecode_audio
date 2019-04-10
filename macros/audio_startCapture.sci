@@ -36,14 +36,7 @@ function audio_startCapture(line)
 //    audio_stopCapture(line)
 //
 // See also
-//    audio_checkMixer
-//    audio_getLine
-//    audio_getMixers
 //    audio_stopCapture
-//    audio_snapshot
-//    audio_playSnapshot
-//    audio_getSnapshot
-//    audio_saveSnapshot
 //
 // Authors
 //     Joshua T. 

@@ -35,15 +35,10 @@ function audio_playSnapshot(line)
 //    audio_stopCapture(line)
 //
 // See also
-//    audio_checkMixer
-//    audio_getMixers
-//    audio_getLine
-//    audio_startCapture
-//    audio_stopCapture
 //    audio_snapshot
 //    audio_getSnapshot
 //    audio_saveSnapshot
 // Authors
 //     Joshua T. 
-    line.playAudio()
+    line.playAudio(%t)
 endfunction

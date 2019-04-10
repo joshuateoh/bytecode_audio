@@ -28,13 +28,21 @@
             <term>line :</term>
             <listitem><para> Java object. Audio line.</para></listitem>
         </varlistentry>
+        <varlistentry>
+            <term>x :</term>
+            <listitem><para> Double. The number of seconds or the number of bytes.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>secByte :</term>
+            <listitem><para> Boolean. True for seconds, false for bytes.</para></listitem>
+        </varlistentry>
    </variablelist>
 </refsection>
 
 <refsection>
    <title>Description</title>
    <para>
-This function obtains a specific duration of the latest audio data stored in the buffer. This data can then be played, stored as a variable or saved into a file. The duration of the snapshot is set when creating the audio line.
+This function obtains a snapshot of the latest audio data stored in the buffer. This data can then be played, stored as a variable or saved into a file. The snapshot duration is based on the parameters set when creating the audio line. You can also specify the amount of data in the snapshot in either seconds or bytes.
    </para>
    <para>
 </para>
@@ -57,11 +65,6 @@ audio_stopCapture(line)
 <refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
-   <member><link linkend="audio_checkMixer">audio_checkMixer</link></member>
-   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
-   <member><link linkend="audio_getLine">audio_getLine</link></member>
-   <member><link linkend="audio_startCapture">audio_startCapture</link></member>
-   <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
    <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
    <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
    <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>

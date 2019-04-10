@@ -42,6 +42,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import javax.sound.sampled.*;
+import java.util.ArrayList;
 
 public class AudioCaptureV4 {
 
@@ -103,6 +104,8 @@ public class AudioCaptureV4 {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
     // check whether a mixer is compatible with TargetDataLine and SourceDataLine
     public static String[] checkMixer(int mixerID){
         String[] mixerresult = new String[3];
@@ -145,6 +148,96 @@ public class AudioCaptureV4 {
         return mymixers;
     }
 
+    public static String[] listActiveMixers(){
+        ArrayList<String> activemixers = new ArrayList<String>();
+
+        Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
+        for (int i = 0; i < mixerInfo.length; i++){
+            Mixer mixer = AudioSystem.getMixer(mixerInfo[i]);
+            Line[] mixerlines = mixer.getTargetLines();
+            for (int j=0; j < mixerlines.length; j++){
+                Mixer.Info mixerinfo = mixer.getMixerInfo();
+                activemixers.add(mixerinfo.toString());
+            }
+
+        }
+        String[] activestr = activemixers.toArray(new String[activemixers.size()]);
+        return activestr;
+
+    }
+
+    public static Integer getActiveMixers(){
+        Integer n_mixers = 0;
+        Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
+        for (int i = 0; i < mixerInfo.length; i++){
+            Mixer mixer = AudioSystem.getMixer(mixerInfo[i]);
+            Line[] mixerlines = mixer.getTargetLines();
+            for (int j=0; j < mixerlines.length; j++){
+                n_mixers++;
+            }   
+        }
+        return n_mixers;
+
+    }
+
+    public static Integer killAllLines() {
+        Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
+        Integer linecnt = 0;
+        for (int i = 0; i < mixerInfo.length; i++){
+            Mixer mixer = AudioSystem.getMixer(mixerInfo[i]);
+            Line[] mixerlines = mixer.getTargetLines();
+            for (int j=0; j < mixerlines.length; j++){
+                mixerlines[j].close();
+                linecnt++;
+            }
+        }
+        return linecnt;
+    }
+
+    public ArrayList<String> listLines(){
+        ArrayList<String> mylines = new ArrayList<String>();
+        Line[] existingLines;
+        Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
+        Mixer mixer = AudioSystem.getMixer(mixerInfo[mixer_selector]);
+        existingLines = mixer.getTargetLines();
+        for (int i = 0; i < existingLines.length; i++){
+            Line.Info lineInfo = existingLines[i].getLineInfo();
+            mylines.add(lineInfo.toString());
+        }
+        return mylines;
+    }
+
+    public String[] listLines2(){
+        ArrayList<String> mylines = listLines();
+        String[] mystrings = mylines.toArray(new String[mylines.size()]);
+        return mystrings;
+    }
+
+    public Integer getLineNumber(){
+        ArrayList<String> mylines = listLines();
+        Integer x = mylines.size();
+        return x;
+    }
+
+    public void killLine(){
+        
+        if (targetDataLine != null) {
+
+            if (targetDataLine.isOpen()){
+
+                try{
+                    targetDataLine.stop();
+                    targetDataLine.close();
+                    
+                }
+                catch (Exception e){
+                    System.out.println(e.getClass().toString());
+                }
+
+            }
+        }
+    }
+
     // This method creates and returns an AudioFormat object for a given set of
     // format parameters.
     // If these parameters don't work well for you, try some of the other allowable
@@ -169,14 +262,9 @@ public class AudioCaptureV4 {
     // ByteArrayOutputStream object.
     public String captureAudio() {
 
-        if (captureRunning == true) {
-            // Capture is already running
-            // do nothing
-            // indicate that it is running
-            return "RUNNING";
-        } else {
-            captureRunning = true;
-
+        if (targetDataLine == null) {
+        
+            // Initialize targetDataline
             try {
                 
                 // Get everything set up for capture
@@ -191,6 +279,22 @@ public class AudioCaptureV4 {
                     targetDataLine = (TargetDataLine) mixer.getLine(dataLineInfo);
                 }
 
+
+            } catch (Exception e) {
+                System.out.println(e);
+                //captureRunning = false;
+                return e.getClass().toString();
+            } // end catch   
+        }
+
+        if (targetDataLine.isOpen()) {
+            // do nothing
+            return "RUNNING";
+
+        }
+        else{
+            //captureRunning = true;
+            try{
                 targetDataLine.open(audioFormat);
                 targetDataLine.start();
 
@@ -198,24 +302,12 @@ public class AudioCaptureV4 {
                 // run until the Stop button is clicked.
                 Thread captureThread = new Thread(new CaptureThread());
                 captureThread.start();
-            } catch (Exception e) {
+            }
+            catch (Exception e){
                 System.out.println(e);
-                //Throwable cause = e.getCause();
-                //System.out.println("getCause: ");
-                //System.out.println(cause);
-                //System.out.println("Localized Message: ");
-                //System.out.println(e.getLocalizedMessage());
-                //System.out.println("Message: ");
-                //System.out.println(e.getMessage());
-                //System.out.println("toString: ");
-                //System.out.println(e.toString());
-                //System.out.println("Class :");
-                //System.out.println(e.getClass());
-                captureRunning = false;
-
-                //System.exit(0);
                 return e.getClass().toString();
-            } // end catch
+            }
+
             return "OK";
         }
 
@@ -263,13 +355,40 @@ public class AudioCaptureV4 {
 
     }
 
+    // Returns the entire ring buffer
+    public short[] getAllBuffer(){
+        int capacity = ringbuffer.capacity();
+        byte[] audioall = new byte[capacity];
+        int mytemp = ringbuffer.getLatest(audioall);
+        return byteToShort(audioall, false);
+    }
+
+    // Saves the entire ring buffer to a file
+    public void getAllBuffer(String filepath){
+        int capacity = ringbuffer.capacity();
+        byte[] audioall = new byte[capacity];
+        int mytemp = ringbuffer.getLatest(audioall);
+        File wavFile = new File(filepath);
+        AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
+        InputStream byteArrayInputStream = new ByteArrayInputStream(audioall);
+        AudioInputStream audioInputStream2 = new AudioInputStream(byteArrayInputStream, audioFormat,
+                                audioall.length / audioFormat.getFrameSize());
+        try {
+            AudioSystem.write(audioInputStream2, fileType, wavFile);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     public void stopAudio() {
         stopCapture = true;
-        captureRunning = false;
+        //captureRunning = false;
     }
 
     // Snapshot Audio
-    // Get the latest 1-2 seconds
+    // Get the latest n seconds from buffer
+    // Duration is fixed and depends on initialization parameters
     public void snapAudio() {
         // Snap 2 seconds of audio
         // duration x sr x bytes per sample x nbr of channels
@@ -280,18 +399,70 @@ public class AudioCaptureV4 {
 
     }
 
-    // This method plays back the audio data that has been saved in the ByteArrayOutputStream
-    public void playAudio() {
-        if (audioData == null) {
-            // do nothing
-        } else {
+    // Snapshot Audio
+    // Get the latest x seconds or bytes  from buffer
+    // x is customizable when using the method
+    public void snapAudio(float x, boolean secOrByte ){
+        
+        if (secOrByte){ // True - If using seconds
+            float temp = x * sampleRateG * (bitsG / 8) * channelsG;
+            int audioDataSize = (int) temp; 
+            audioData = new byte[audioDataSize];
+            int mytemp = ringbuffer.getLatest(audioData);
+            
+        }
+        else{ // False - If using bytes
+            audioData = new byte[(int) x];
+            int mytemp = ringbuffer.getLatest(audioData);
+        }
+
+    }
+
+
+
+    // This method plays back the audio data that has been saved in the ring buffer
+    public void playAudio(boolean snapshotOrBuffer) {
+
+        // True - If user wants to play snapshot
+        if (snapshotOrBuffer){
+            if (audioData == null) {
+                // do nothing
+            } else {
+                try {
+
+                    // Get an input stream on the byte array containing the data
+                    InputStream byteArrayInputStream = new ByteArrayInputStream(audioData);
+                    AudioFormat audioFormat = getAudioFormat();
+                    audioInputStream = new AudioInputStream(byteArrayInputStream, audioFormat,
+                            audioData.length / audioFormat.getFrameSize());
+                    DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, audioFormat);
+                    sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
+                    sourceDataLine.open(audioFormat);
+                    sourceDataLine.start();
+
+                    // Create a thread to play back the data and start it running. It will run until
+                    // all the data has been played back.
+                    Thread playThread = new Thread(new PlayThread());
+                    playThread.start();
+
+                } catch (Exception e) {
+                    System.out.println(e);
+                    // System.exit(0);
+                } // end catch
+            } // end of else
+        } // end of if(snapshotOrBuffer)
+        else { // If user wants to play the entire buffer
+            int capacity = ringbuffer.capacity();
+            byte[] audioall = new byte[capacity];
+            int mytemp = ringbuffer.getLatest(audioall);
+
             try {
 
                 // Get an input stream on the byte array containing the data
-                InputStream byteArrayInputStream = new ByteArrayInputStream(audioData);
+                InputStream byteArrayInputStream = new ByteArrayInputStream(audioall);
                 AudioFormat audioFormat = getAudioFormat();
                 audioInputStream = new AudioInputStream(byteArrayInputStream, audioFormat,
-                        audioData.length / audioFormat.getFrameSize());
+                        audioall.length / audioFormat.getFrameSize());
                 DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class, audioFormat);
                 sourceDataLine = (SourceDataLine) AudioSystem.getLine(dataLineInfo);
                 sourceDataLine.open(audioFormat);
@@ -304,9 +475,11 @@ public class AudioCaptureV4 {
 
             } catch (Exception e) {
                 System.out.println(e);
-                //System.exit(0);
+                // System.exit(0);
             } // end catch
+
         } // end of else
+
     }// end playAudio
 
     // ==========================================================================================================================================//
@@ -332,23 +505,35 @@ public class AudioCaptureV4 {
                  // button.
 
                 while (!stopCapture) {
-                    // Read data from the internal buffer of the data line.
-                    int cnt = targetDataLine.read(tempBuffer, 0, tempBuffer.length);
 
-                    if (cnt > 0) {
-                        // Save data in output stream object.
-                        // byteArrayOutputStream.write(tempBuffer, 0, cnt);
-                        ringbuffer.put(tempBuffer);
+                    if (targetDataLine.isOpen()){
+                        // Read data from the internal buffer of the data line.
+                        int cnt = targetDataLine.read(tempBuffer, 0, tempBuffer.length);
 
-                    } // end if
+                        if (cnt > 0) {
+                            // Save data in output stream object.
+                            // byteArrayOutputStream.write(tempBuffer, 0, cnt);
+                            ringbuffer.put(tempBuffer);
+
+                        } // end if
+                    } 
+                    else{
+                        stopCapture = true;
+                    }
                 } // end while
                   // byteArrayOutputStream.close();
                 targetDataLine.stop();
                 targetDataLine.close();
             } catch (Exception e) {
                 System.out.println(e);
-                System.exit(0);
+                //System.exit(0);
             } // end catch
+            System.out.println("Exiting Capture thread");
+
+            if (targetDataLine != null){
+                System.out.println("Stopping and closing line does not make it null!");
+            }
+
         }// end run
     }// end inner class CaptureThread
 

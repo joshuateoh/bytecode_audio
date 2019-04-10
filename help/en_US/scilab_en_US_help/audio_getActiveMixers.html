@@ -1,0 +1,84 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>audio_getActiveMixers</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="audio_checkMixer.html">&lt;&lt; audio_checkMixer</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="audio_getBuffer.html">audio_getBuffer &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path" dir="ltr"><a href="index.html">bytecode_audio</a> &gt;&gt; <a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a> &gt; audio_getActiveMixers</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">audio_getActiveMixers</h1>
+    <p class="refpurpose">Obtain a list of mixers that have lines that are currently open</p></div>
+
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">mixerlist :</span>
+            <dd><p class="para">A string array of the active mixers</p></dd></dt>
+        <dt><span class="term">nmixers :</span>
+            <dd><p class="para">Double. The number of active mixers</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">This function returns a array of mixers with active audio lines as well as the total.</p>
+   <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">line</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getLine</span><span class="scilabopenclose">(</span><span class="scilabnumber">16000</span><span class="scilabdefault">,</span><span class="scilabnumber">16</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">mixerlist</span><span class="scilabdefault">,</span><span class="scilabid">nmixer</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">audio_getActiveMixers</span><span class="scilabopenclose">(</span><span class="scilabopenclose">)</span>
+<span class="scilabid">audio_startCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
+<span class="scilabopenclose">[</span><span class="scilabid">mixerlist</span><span class="scilabdefault">,</span><span class="scilabid">nmixer</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">audio_getActiveMixers</span><span class="scilabopenclose">(</span><span class="scilabopenclose">)</span>
+<span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">See also</h3>
+   <ul class="itemizedlist"><li class="member"><a href="audio_checkMixer.html" class="link">audio_checkMixer</a> &#8212; Check the lines supported by a selected mixer.</li>
+   <li class="member"><a href="audio_getMixers.html" class="link">audio_getMixers</a> &#8212; Obtain a list of available mixers</li></ul></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Joshua T.</li></ul></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="audio_checkMixer.html">&lt;&lt; audio_checkMixer</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="audio_getBuffer.html">audio_getBuffer &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

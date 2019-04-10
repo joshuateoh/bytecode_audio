@@ -56,14 +56,8 @@ disp(res)
 <refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
-   <member><link linkend="audio_getLine">audio_getLine</link></member>
    <member><link linkend="audio_getMixers">audio_getMixers</link></member>
-   <member><link linkend="audio_startCapture">audio_startCapture</link></member>
-   <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
-   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
-   <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
-   <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
-   <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>
+   <member><link linkend="audio_getActiveMixers">audio_getActiveMixers</link></member>
    </simplelist>
 </refsection>
 

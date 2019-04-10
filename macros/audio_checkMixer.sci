@@ -31,14 +31,8 @@ function res = audio_checkMixer(mixerID)
 //    disp(res)
 //
 // See also
-//    audio_getLine
 //    audio_getMixers
-//    audio_startCapture
-//    audio_stopCapture
-//    audio_snapshot
-//    audio_playSnapshot
-//    audio_getSnapshot
-//    audio_saveSnapshot
+//    audio_getActiveMixers
 //
 // Authors
 //     Joshua T. 
