@@ -21,6 +21,14 @@
   </refnamediv>
 
 
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   data=audio_getBuffer(line)
+   
+   </synopsis>
+</refsynopsisdiv>
+
 <refsection>
    <title>Parameters</title>
    <variablelist>

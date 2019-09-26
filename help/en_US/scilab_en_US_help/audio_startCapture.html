@@ -36,6 +36,9 @@
     <p class="refpurpose">Begins capturing audio</p></div>
 
 
+<div class="refsynopsisdiv"><h3 class="title">Syntax</h3>
+   <div class="synopsis"><pre><span class="functionid">audio_startCapture</span><span class="default">(</span><span class="default">line</span><span class="default">)</span></pre></div></div>
+
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">line :</span>
             <dd><p class="para">Java object. Audio line.</p></dd></dt></dl></div>
@@ -49,7 +52,7 @@
 <span class="scilabid">line</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getLine</span><span class="scilabopenclose">(</span><span class="scilabnumber">16000</span><span class="scilabdefault">,</span><span class="scilabnumber">16</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
 <span class="scilabid">audio_startCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
 <span class="scilabcomment">// The audio capture process has started.</span>
-<span class="scilabcomment">// Feel free to say something before running the next line of code.</span>
+<a class="scilabcommand" href="scilab://messagebox">messagebox</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0034;</span><span class="scilabstring">Please say something and then click OK to continue</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">modal</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
 <span class="scilabid">audio_snapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
 <span class="scilabid">audio_playSnapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
 <span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>

@@ -15,7 +15,7 @@ function audio_startCapture(line)
 //    line = audio_getLine(16000,16,1,%t,%t,2,10);
 //    audio_startCapture(line)
 //    // The audio capture process has started. 
-//    // Feel free to say something before running the next line of code.
+//    messagebox("Please say something and then click OK to continue","modal");
 //    audio_snapshot(line)
 //    audio_playSnapshot(line)
 //    audio_stopCapture(line)

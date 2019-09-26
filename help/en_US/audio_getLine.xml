@@ -21,6 +21,16 @@
   </refnamediv>
 
 
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   line = audio_getLine()
+   line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,[mixer])
+   
+   
+   </synopsis>
+</refsynopsisdiv>
+
 <refsection>
    <title>Parameters</title>
    <variablelist>
