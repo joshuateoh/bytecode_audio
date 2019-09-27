@@ -33,7 +33,7 @@
 //      killAllLines() : Kill all lines that are currently open.
 //      killLine() : Kill the line of an AudioCaptureV4 object
 //      getAllBuffer() : Return the audio buffer
-//      getAllBuffer(String filepath) : Save the audio buffer into a file
+//      saveBuffer(String filepath) : Save the audio buffer into a file
 //      snapAudio(float x, boolean secOrByte ) : A additional snapAudio method where you can control the duraction or bytes
 
 // Modified:
@@ -41,6 +41,8 @@
 //                       audio lines from different AudioCaptureV4 objects without affecting other functionality.
 //      playAudio() --> playAudio(boolean snapshotOrBuffer) : Uses an input to determine whether to play snapshot or buffer
 //      Capture thread - public void run() : Will automatically end thread if line is not open.
+//      getAudioData(String filepath) --> saveAudioData(String filepath) : Function renamed to be less confusing.
+      
 
 
 /*File AudioCaptureV4.java
@@ -268,11 +270,11 @@ public class AudioCaptureV4 {
         stopAudio()
         playAudio(boolean snapshotOrBuffer)
         getAudioData()
-        getAudioData(String filepath)
+        saveAudioData(String filepath)
         snapAudio()
         snapAudio(float x, boolean secOrByte )
         getAllBuffer()
-        getAllBuffer(String filepath)
+        saveBuffer(String filepath)
         killLine()
 
     */
@@ -414,7 +416,7 @@ public class AudioCaptureV4 {
     } // end getAudioData
 
     // Saves the snapshot audio data in a file
-    public void getAudioData(String filepath) {
+    public void saveAudioData(String filepath) {
         File wavFile = new File(filepath);
         AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
         InputStream byteArrayInputStream = new ByteArrayInputStream(audioData);
@@ -426,7 +428,7 @@ public class AudioCaptureV4 {
         } catch (Exception e) {
             System.out.println(e);
         }
-    } // end getAudioData
+    } // end saveAudioData
 
     // Get the latest n seconds from buffer
     // Duration is fixed and depends on initialization parameters
@@ -463,7 +465,7 @@ public class AudioCaptureV4 {
     } // end getAllBuffer
 
     // Saves the entire ring buffer to a file
-    public void getAllBuffer(String filepath){
+    public void saveBuffer(String filepath){
         int capacity = ringbuffer.capacity();
         byte[] audioall = new byte[capacity];
         int mytemp = ringbuffer.getLatest(audioall);
@@ -478,7 +480,7 @@ public class AudioCaptureV4 {
         } catch (Exception e) {
             System.out.println(e);
         }
-    } // end getAllBuffer
+    } // end saveBuffer
 
     // Kill the TargetDataline for this object
     public void killLine(){   

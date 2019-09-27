@@ -29,5 +29,5 @@ function audio_saveBuffer(line,wavfile)
 // Authors
 //     Joshua T. 
     
-    line.getAllBuffer(wavfile);
+    line.saveBuffer(wavfile);
 endfunction

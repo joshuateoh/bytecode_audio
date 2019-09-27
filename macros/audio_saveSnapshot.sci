@@ -29,5 +29,5 @@ function audio_saveSnapshot(line,wavfile)
 //
 // Authors
 //     Joshua T. 
-    line.getAudioData(wavfile);
+    line.saveAudioData(wavfile);
 endfunction

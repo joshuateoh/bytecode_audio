@@ -10,8 +10,8 @@
   <macro name="audio_killLine" file="audio_killLine.bin" md5="c68230facbdcbf2df6bc14d6b1589356"/>
   <macro name="audio_playBuffer" file="audio_playBuffer.bin" md5="770be28a24e09ed47f5abb0c9a48b8ed"/>
   <macro name="audio_playSnapshot" file="audio_playSnapshot.bin" md5="9d5932e4230be7f32068036b7172ddb3"/>
-  <macro name="audio_saveBuffer" file="audio_saveBuffer.bin" md5="91b89596e964d0be9dce80ff9d3084db"/>
-  <macro name="audio_saveSnapshot" file="audio_saveSnapshot.bin" md5="603b3c9b5a6c5f308c457c0ec33b50bb"/>
+  <macro name="audio_saveBuffer" file="audio_saveBuffer.bin" md5="522eb78efc1b953e1b95baa1f33e1788"/>
+  <macro name="audio_saveSnapshot" file="audio_saveSnapshot.bin" md5="388d94357633920a4918fc36382de62a"/>
   <macro name="audio_snapshot" file="audio_snapshot.bin" md5="e60dde448d8a94495a0b4dbb77d8820c"/>
   <macro name="audio_startCapture" file="audio_startCapture.bin" md5="6f13303c0e54916eef7294aa76068e0c"/>
   <macro name="audio_stopCapture" file="audio_stopCapture.bin" md5="26c54983f76795c6253d8909eb92d4a8"/>
