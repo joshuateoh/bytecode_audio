@@ -15,6 +15,4 @@
   <macro name="audio_snapshot" file="audio_snapshot.bin" md5="e60dde448d8a94495a0b4dbb77d8820c"/>
   <macro name="audio_startCapture" file="audio_startCapture.bin" md5="6f13303c0e54916eef7294aa76068e0c"/>
   <macro name="audio_stopCapture" file="audio_stopCapture.bin" md5="26c54983f76795c6253d8909eb92d4a8"/>
-  <macro name="recognizer_setup" file="recognizer_setup.bin" md5="22eaf3de6dddc8ca6d169eb6d78322fd"/>
-  <macro name="speech_recognizer" file="speech_recognizer.bin" md5="75974fe921feb1a3a1801d4057fd35b8"/>
 </scilablib>
