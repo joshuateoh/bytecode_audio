@@ -34,6 +34,7 @@ function bytecode_audiolib = startModule()
   mprintf("\tLoad Java libraries\n");
   exec(pathconvert(root_tlbx+"/src/java/loader.sce",%f));
   ilib_verbose(verboseMode);
+  javaclasspath(root_tlbx + '/jar/sphinx4-core-1.0-20150630.174404-9.jar')
 //
 //// load localization
 //  addlocalizationdomain(TOOLBOX_NAME, root_tlbx + "/locales");
@@ -58,9 +59,9 @@ function bytecode_audiolib = startModule()
 
 // Load Preferences GUI
 // =============================================================================
-  if getscilabmode() == "STD" then
-    addModulePreferences(TOOLBOX_TITLE, root_tlbx, etc_tlbx + "bytecode_audio_preferences.xml");
-  end
+//  if getscilabmode() == "STD" then
+//    addModulePreferences(TOOLBOX_TITLE, root_tlbx, etc_tlbx + "bytecode_audio_preferences.xml");
+//  end
 
 endfunction
 
