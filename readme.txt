@@ -3,7 +3,7 @@
 This module is developed by Bytecode to allow audio recording inside SCILAB.
 
 Features
-This toolbox allows you to capture audio inside Scilab. There are currently 9 functions related to this feature.
+This toolbox allows you to capture audio inside Scilab. There are currently 15 functions related to this feature.
 audio_checkMixer — Check the lines supported by a selected mixer.
 audio_getLine — Obtains an audio line
 audio_getMixers — Obtain a list of available mixers
