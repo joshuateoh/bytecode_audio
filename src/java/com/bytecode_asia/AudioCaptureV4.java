@@ -1,10 +1,7 @@
 /*File AudioCaptureV4.java
-This program demonstrates the capture and subsequent playback of audio data.
-
-Input data from a microphone is captured and saved in a ByteArrayOutputStream object when the user clicks the Capture button.
-Data capture stops when the user clicks the Stop button.
-
-**************************************/
+This Java file allows audio to be captured and recorded inside Scilab.
+Input from a microphone is captured and saved inside a ring buffer. 
+*/
 
 package com.bytecode_asia;
 
@@ -29,14 +26,14 @@ public class AudioCaptureV4 {
     boolean captureRunning = false;
 
     // Default values
-    float sampleRateG = 8000.0F;
-    int bitsG = 8;
-    int channelsG = 1;
-    boolean signedG = true;
-    boolean bigEndianG = false;
-    int duration = 2;
-    int ring_duration = 10;
-    boolean defaultMixer = true;
+    float sampleRateG = 8000.0F; // Default sample rate
+    int bitsG = 8; // Default number of bits per sample
+    int channelsG = 1; // Default number of channels
+    boolean signedG = true; // Default is signed numbers
+    boolean bigEndianG = false; // Default is small endian
+    int duration = 2; // Default snapshot duration
+    int ring_duration = 10; // Default ring buffer duration
+    boolean defaultMixer = true; // Mixer is chosen automatically by default
 
     // ========================================================================================================================================
     //                                                           CONSTRUCTORS          
@@ -225,15 +222,10 @@ public class AudioCaptureV4 {
     // This method creates and returns an AudioFormat object for a given set of format parameters.
     private AudioFormat getAudioFormat() {
         float sampleRate = sampleRateG;
-        // 8000,11025,16000,22050,44100
         int sampleSizeInBits = bitsG;
-        // 8,16
         int channels = channelsG;
-        // 1,2
         boolean signed = signedG;
-        // true,false
         boolean bigEndian = bigEndianG;
-        // true,false
         return new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
     }// end getAudioFormat
 
@@ -458,14 +450,10 @@ public class AudioCaptureV4 {
         public void run() {
             // Number of bytes for 10 seconds
             int ringbuffer10sec = ring_duration * (int) sampleRateG * (bitsG / 8) * channelsG;
-            // System.out.println("linebuffer is "+linebuffer);
-            // System.out.println("ringbuffer10sec is "+ringbuffer10sec);
             ringbuffer = new CircularByteBuffer3(ringbuffer10sec);
 
             stopCapture = false;
-            try {// Loop until stopCapture is set by another thread that services the Stop
-                 // button.
-
+            try {// Loop until stopCapture is set true
                 while (!stopCapture) {
 
                     if (targetDataLine.isOpen()){
@@ -473,22 +461,21 @@ public class AudioCaptureV4 {
                         int cnt = targetDataLine.read(tempBuffer, 0, tempBuffer.length);
 
                         if (cnt > 0) {
-                            // Save data in output stream object.
-                            // byteArrayOutputStream.write(tempBuffer, 0, cnt);
+                            // Save data in ring buffe.
                             ringbuffer.put(tempBuffer);
 
                         } // end if
                     } 
-                    else{
+                    else{ // If line is close, stop capture
                         stopCapture = true;
                     }
                 } // end while
-                  // byteArrayOutputStream.close();
+                  
                 targetDataLine.stop();
                 targetDataLine.close();
             } catch (Exception e) {
                 System.out.println(e);
-                //System.exit(0);
+                
             } // end catch
             System.out.println("Exiting Capture thread");
 
