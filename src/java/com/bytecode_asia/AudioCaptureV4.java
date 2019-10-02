@@ -1,66 +1,9 @@
-// Changelog
-// Version 4b
-// Trying to fix crashes (just comment out all the System.exit)
-// Now I want the error info in Scilab.
-// Converting capture from void to a string
-// Converted captureAudio from void to String
-// The return message will depend on whether capturing is a success or not:
-//  OK - success
-//  exceptions - send the exception class
-//  RUNNING - capture has already started previously
-//
-// On the Scilab side
-// audio_startCapture now reads the messages and output a corresponding message
-// Scilab no longer shuts down and will instead tell if the capture has started or not
-
-// Added a static checkMixer method
-// this is to check if which line is supported
-// Added a scilab function too.
-
-// Version 4c
-// Added 1 new function and modified 1 function
-// New:
-//      byteToShort(byte[] byteData, boolean writeLittleEndian) : Converts byte to short
-
-// Modified:
-//      getAudioData() : Now returns short[] instead of byte[]
-
-// Version 4d
-// Add several new functions, modified others
-// New:
-//      listActiveMixers() : Return a string array of mixers with lines that are currently open
-//      getActiveMixers() : Return the number of mixers with lines that are currently open
-//      killAllLines() : Kill all lines that are currently open.
-//      killLine() : Kill the line of an AudioCaptureV4 object
-//      getAllBuffer() : Return the audio buffer
-//      saveBuffer(String filepath) : Save the audio buffer into a file
-//      snapAudio(float x, boolean secOrByte ) : A additional snapAudio method where you can control the duraction or bytes
-
-// Modified:
-//      captureAudio() : captureRuning is no longer used. Checks are done using targetDataLine. This allows a static function to kill 
-//                       audio lines from different AudioCaptureV4 objects without affecting other functionality.
-//      playAudio() --> playAudio(boolean snapshotOrBuffer) : Uses an input to determine whether to play snapshot or buffer
-//      Capture thread - public void run() : Will automatically end thread if line is not open.
-//      getAudioData(String filepath) --> saveAudioData(String filepath) : Function renamed to be less confusing.
-      
-
-
 /*File AudioCaptureV4.java
 This program demonstrates the capture and subsequent playback of audio data.
-
-A GUI appears on the screen containing the following buttons:
-Capture
-Stop
-Playback
 
 Input data from a microphone is captured and saved in a ByteArrayOutputStream object when the user clicks the Capture button.
 Data capture stops when the user clicks the Stop button.
 
-
-Playback begins when the user clicks the Playback button.
-
-
-Tested using SDK 1.4.0 under Win2000
 **************************************/
 
 package com.bytecode_asia;
@@ -673,4 +616,4 @@ public class AudioCaptureV4 {
     }
 
     // ============================================================================================================================================//
-}// end outer class AudioCapture01.java
+}// end outer class AudioCaptureV4.java
