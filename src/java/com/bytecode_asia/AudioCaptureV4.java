@@ -477,11 +477,7 @@ public class AudioCaptureV4 {
                 System.out.println(e);
                 
             } // end catch
-            System.out.println("Exiting Capture thread");
 
-            if (targetDataLine != null){
-                System.out.println("Stopping and closing line does not make it null!");
-            }
 
         }// end run
     }// end inner class CaptureThread
@@ -496,7 +492,6 @@ public class AudioCaptureV4 {
         public void run() {
             try {
                 int cnt;
-                System.out.println("playDataSize is " + playDataSize);
                 // Keep looping until the input read method returns -1 for empty stream.
                 while ((cnt = audioInputStream.read(tempBuffer, 0, tempBuffer.length)) != -1) {
                     if (cnt > 0) {
@@ -512,7 +507,6 @@ public class AudioCaptureV4 {
                 sourceDataLine.close();
             } catch (Exception e) {
                 System.out.println(e);
-                System.exit(0);
             } // end catch
         }// end run
     }// end inner class PlayThread
@@ -551,7 +545,6 @@ public class AudioCaptureV4 {
             int count = dst.length;
 
             if (count <= idxPut) {
-                System.out.println();
                 int idxRead = idxPut - dst.length;
                 System.arraycopy(buffer, idxRead, dst, 0, count);
             } else if (idxPut == 0) {
