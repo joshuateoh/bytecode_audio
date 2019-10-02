@@ -20,12 +20,8 @@ audio_saveBuffer -  Saves the entire audio buffer into a file
 audio_killAllLines -  Kills all audio lines in Scilab
 audio_killLine -  Kills an audio line
 
-Experimental
-This toolbox also contains 2 experimental functions that allow for some simple speech recognition. Currently, users will need to provide thier own acoustic model, dictionary and language model in order to use the functions.
-Do note that the spinx4 jar file inside the jar folder is not detected by the builder upon building the toolbox. You will need to manually edit the loader in src/java to include it in the java class path. 
 
-TODO
-- Improve the speech recognition functions and add in help files for the speech recognition
-- Text to Speech feature is planned to be added in the future.
+
+
 
 
