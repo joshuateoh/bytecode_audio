@@ -21,6 +21,14 @@
   </refnamediv>
 
 
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   audio_startCapture(line)
+   
+   </synopsis>
+</refsynopsisdiv>
+
 <refsection>
    <title>Parameters</title>
    <variablelist>
@@ -47,7 +55,7 @@ This function starts the audio capturing process (done in the background) on a g
 line = audio_getLine(16000,16,1,%t,%t,2,10);
 audio_startCapture(line)
 // The audio capture process has started.
-// Feel free to say something before running the next line of code.
+messagebox("Please say something and then click OK to continue","modal");
 audio_snapshot(line)
 audio_playSnapshot(line)
 audio_stopCapture(line)
@@ -58,14 +66,7 @@ audio_stopCapture(line)
 <refsection role="see also">
    <title>See also</title>
    <simplelist type="inline">
-   <member><link linkend="audio_checkMixer">audio_checkMixer</link></member>
-   <member><link linkend="audio_getLine">audio_getLine</link></member>
-   <member><link linkend="audio_getMixers">audio_getMixers</link></member>
    <member><link linkend="audio_stopCapture">audio_stopCapture</link></member>
-   <member><link linkend="audio_snapshot">audio_snapshot</link></member>
-   <member><link linkend="audio_playSnapshot">audio_playSnapshot</link></member>
-   <member><link linkend="audio_getSnapshot">audio_getSnapshot</link></member>
-   <member><link linkend="audio_saveSnapshot">audio_saveSnapshot</link></member>
    </simplelist>
 </refsection>
 

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <scilablib name="bytecode_audiolib">
-  <macro name="audio_checkMixer" file="audio_checkMixer.bin" md5="50e7820e435b61e9d9de1533f5f8d3dd"/>
-  <macro name="audio_getLine" file="audio_getLine.bin" md5="4c883f90235e94d34cd8388ed9211056"/>
-  <macro name="audio_getMixers" file="audio_getMixers.bin" md5="4b558fc33272290266fcc0b7c5f3e4e8"/>
-  <macro name="audio_getSnapshot" file="audio_getSnapshot.bin" md5="b9db1e2626350fb3b0e392a3afd35f98"/>
-  <macro name="audio_playSnapshot" file="audio_playSnapshot.bin" md5="a6ca346410607cdbbc794cfbeaadc3af"/>
-  <macro name="audio_saveSnapshot" file="audio_saveSnapshot.bin" md5="f34101ddfbfd17889b2bf0505e192459"/>
-  <macro name="audio_snapshot" file="audio_snapshot.bin" md5="3a1afdc23fe39547a52c33a7abc7035c"/>
-  <macro name="audio_startCapture" file="audio_startCapture.bin" md5="4d0c8759558edd5b8e40a4d254e40179"/>
-  <macro name="audio_stopCapture" file="audio_stopCapture.bin" md5="634d73da218b262caa9d4983a715fec9"/>
-  <macro name="recognizer_setup" file="recognizer_setup.bin" md5="22eaf3de6dddc8ca6d169eb6d78322fd"/>
-  <macro name="speech_recognizer" file="speech_recognizer.bin" md5="75974fe921feb1a3a1801d4057fd35b8"/>
+  <macro name="audio_checkMixer" file="audio_checkMixer.bin" md5="5f41ae924f29a56907bb913a71a02829"/>
+  <macro name="audio_getActiveMixers" file="audio_getActiveMixers.bin" md5="2b5e06c87d0a20d61332c840d4090c3d"/>
+  <macro name="audio_getBuffer" file="audio_getBuffer.bin" md5="cdb20454832eb90f1dcfa2969fdd5f2c"/>
+  <macro name="audio_getLine" file="audio_getLine.bin" md5="353a47b95ec1b72d34870615d79ae017"/>
+  <macro name="audio_getMixers" file="audio_getMixers.bin" md5="bf7c1c2ac529eb8bc1a9b42ce3e777e5"/>
+  <macro name="audio_getSnapshot" file="audio_getSnapshot.bin" md5="2bbeaa29ce6ef617c460607f040697fa"/>
+  <macro name="audio_killAllLines" file="audio_killAllLines.bin" md5="890bed6363310b7cd2c3cce5b09949e5"/>
+  <macro name="audio_killLine" file="audio_killLine.bin" md5="c68230facbdcbf2df6bc14d6b1589356"/>
+  <macro name="audio_playBuffer" file="audio_playBuffer.bin" md5="770be28a24e09ed47f5abb0c9a48b8ed"/>
+  <macro name="audio_playSnapshot" file="audio_playSnapshot.bin" md5="9d5932e4230be7f32068036b7172ddb3"/>
+  <macro name="audio_saveBuffer" file="audio_saveBuffer.bin" md5="522eb78efc1b953e1b95baa1f33e1788"/>
+  <macro name="audio_saveSnapshot" file="audio_saveSnapshot.bin" md5="388d94357633920a4918fc36382de62a"/>
+  <macro name="audio_snapshot" file="audio_snapshot.bin" md5="e60dde448d8a94495a0b4dbb77d8820c"/>
+  <macro name="audio_startCapture" file="audio_startCapture.bin" md5="6f13303c0e54916eef7294aa76068e0c"/>
+  <macro name="audio_stopCapture" file="audio_stopCapture.bin" md5="26c54983f76795c6253d8909eb92d4a8"/>
 </scilablib>

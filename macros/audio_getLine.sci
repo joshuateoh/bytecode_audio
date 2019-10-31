@@ -1,22 +1,7 @@
 function line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,varargin)
 // Obtains an audio line
 //
-//    Copyright 2019 Bytecode.
-//    
-//    This program is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 2 of the License, or
-//    (at your option) any later version.
-//    
-//    This program is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//    
-//    You should have received a copy of the GNU General Public License
-//    along with this program.  If not, see <http://www.gnu.org/licenses/
-//
-// Calling Sequence
+// Syntax
 //    line = audio_getLine()
 //     line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,[mixer])
 //     
@@ -45,14 +30,8 @@ function line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,vara
 //    audio_stopCapture(line)
 //
 // See also
-//    audio_checkMixer
-//    audio_getMixers
-//    audio_startCapture
-//    audio_stopCapture
-//    audio_snapshot
-//    audio_playSnapshot
-//    audio_getSnapshot
-//    audio_saveSnapshot
+//    audio_killLine
+//    audio_killAllLine
 //
 // Authors
 //     Joshua T. 

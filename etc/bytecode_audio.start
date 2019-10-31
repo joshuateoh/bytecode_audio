@@ -58,9 +58,9 @@ function bytecode_audiolib = startModule()
 
 // Load Preferences GUI
 // =============================================================================
-  if getscilabmode() == "STD" then
-    addModulePreferences(TOOLBOX_TITLE, root_tlbx, etc_tlbx + "bytecode_audio_preferences.xml");
-  end
+//  if getscilabmode() == "STD" then
+//    addModulePreferences(TOOLBOX_TITLE, root_tlbx, etc_tlbx + "bytecode_audio_preferences.xml");
+//  end
 
 endfunction
 

@@ -4,10 +4,16 @@
 <mapID target="index" url="index.html"/>
 <mapID target="section_0e1dfd7788a430cec0c2605e54ef1124" url="section_0e1dfd7788a430cec0c2605e54ef1124.html"/>
 <mapID target="audio_checkMixer" url="audio_checkMixer.html"/>
+<mapID target="audio_getActiveMixers" url="audio_getActiveMixers.html"/>
+<mapID target="audio_getBuffer" url="audio_getBuffer.html"/>
 <mapID target="audio_getLine" url="audio_getLine.html"/>
 <mapID target="audio_getMixers" url="audio_getMixers.html"/>
 <mapID target="audio_getSnapshot" url="audio_getSnapshot.html"/>
+<mapID target="audio_killAllLines" url="audio_killAllLines.html"/>
+<mapID target="audio_killLine" url="audio_killLine.html"/>
+<mapID target="audio_playBuffer" url="audio_playBuffer.html"/>
 <mapID target="audio_playSnapshot" url="audio_playSnapshot.html"/>
+<mapID target="audio_saveBuffer" url="audio_saveBuffer.html"/>
 <mapID target="audio_saveSnapshot" url="audio_saveSnapshot.html"/>
 <mapID target="audio_snapshot" url="audio_snapshot.html"/>
 <mapID target="audio_startCapture" url="audio_startCapture.html"/>

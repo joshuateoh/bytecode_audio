@@ -7,14 +7,14 @@ Summary: Audio functions for Scilab
 Version: 1.0.0
 
 Author: Joshua Teoh
-  Aditap Khonglun  
-  Tan Chin Luh
+        Tan Chin Luh
 
 Maintainer: Joshua Teoh <joshua.teoh@bytecode-asia.com>
+	    Tan Chin Luh <chinluh.tan@bytecode-asia.com>
 
 Category: Scilab development
 
-Entity: Bytecode
+Entity: Bytecode (formerly Trity Technologies)
 
 WebSite: https://www.bytecode-asia.com/
 

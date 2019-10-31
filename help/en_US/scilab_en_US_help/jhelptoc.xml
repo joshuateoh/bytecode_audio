@@ -4,10 +4,16 @@
 <tocitem target="index" text="bytecode_audio">
 <tocitem target="section_0e1dfd7788a430cec0c2605e54ef1124" text="bytecode_audio">
 <tocitem target="audio_checkMixer" text="audio_checkMixer"/>
+<tocitem target="audio_getActiveMixers" text="audio_getActiveMixers"/>
+<tocitem target="audio_getBuffer" text="audio_getBuffer"/>
 <tocitem target="audio_getLine" text="audio_getLine"/>
 <tocitem target="audio_getMixers" text="audio_getMixers"/>
 <tocitem target="audio_getSnapshot" text="audio_getSnapshot"/>
+<tocitem target="audio_killAllLines" text="audio_killAllLines"/>
+<tocitem target="audio_killLine" text="audio_killLine"/>
+<tocitem target="audio_playBuffer" text="audio_playBuffer"/>
 <tocitem target="audio_playSnapshot" text="audio_playSnapshot"/>
+<tocitem target="audio_saveBuffer" text="audio_saveBuffer"/>
 <tocitem target="audio_saveSnapshot" text="audio_saveSnapshot"/>
 <tocitem target="audio_snapshot" text="audio_snapshot"/>
 <tocitem target="audio_startCapture" text="audio_startCapture"/>

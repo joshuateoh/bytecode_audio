@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from audio_saveBuffer.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="audio_saveBuffer" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>audio_saveBuffer</refname>
+    <refpurpose>Saves the entire audio buffer into a file</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Syntax</title>
+   <synopsis>
+   audio_saveBuffer(line,wavfile)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+        <varlistentry>
+            <term>line :</term>
+            <listitem><para> Java object. Audio line</para></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term>wavfile :</term>
+            <listitem><para> String. Name of wav file that will used to save the audio</para></listitem>
+        </varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+This function saves the entire audio buffer into a specified file. The audio will be saved as a wav file.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// Requires a microphone
+line = audio_getLine(16000,16,1,%t,%t,2,10);
+audio_startCapture(line)
+messagebox("Please say something and then click OK to continue","modal");
+audio_snapshot(line)
+audio_saveSnapshot(line,TMPDIR+"\myaudio.wav")
+[audiodata,fs]=wavread(TMPDIR+"\myaudio.wav");
+sound(audiodata,fs)
+audio_stopCapture(line)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection role="see also">
+   <title>See also</title>
+   <simplelist type="inline">
+   <member><link linkend="audio_getBuffer">audio_getBuffer</link></member>
+   <member><link linkend="audio_playBuffer">audio_playBuffer</link></member>
+   </simplelist>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Joshua T.</member>
+   </simplelist>
+</refsection>
+</refentry>

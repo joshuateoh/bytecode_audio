@@ -2,10 +2,16 @@
 <!DOCTYPE book [
 <!--Begin Entities-->
 <!ENTITY a4a2ea90d9c18491db8cb91567a57beca SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_checkMixer.xml">
+<!ENTITY a9302f9d2dffff6bd76ffeaa03a6cf217 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getActiveMixers.xml">
+<!ENTITY a840d53c1e8cee801dd87ed785ff07df0 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getBuffer.xml">
 <!ENTITY a41e8bf58ca6ba140e874d12e8ae35945 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getLine.xml">
 <!ENTITY aa3d73c35cee5d4cd3e628b2ab1d0dfd2 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getMixers.xml">
 <!ENTITY a27ed49c9c43dc553f62ca726e2ba34a3 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_getSnapshot.xml">
+<!ENTITY abdb0e2ed7df877423b69f96a7b6b63de SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_killAllLines.xml">
+<!ENTITY a044ff55cb23e9a6f7ddcde1d5fa2dc46 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_killLine.xml">
+<!ENTITY acd19eee19f32b69f9994ec809ba5470c SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_playBuffer.xml">
 <!ENTITY a4fc6f6e2c21ae87f69d9f5d56de07d33 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_playSnapshot.xml">
+<!ENTITY a31f8fdaadc35834455cbc87d8d1f3e33 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_saveBuffer.xml">
 <!ENTITY a3ffe0a6ae73ffadac651c5cc9243cb7d SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_saveSnapshot.xml">
 <!ENTITY a61ef7fd7feb35ac899c0085b96a869fa SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_snapshot.xml">
 <!ENTITY ab7af7319179c46e537c059d0ac948b64 SYSTEM "file:///C:/Program Files/scilab-6.0.2/contrib/bytecode_audio/help/en_US/audio_startCapture.xml">
@@ -29,10 +35,16 @@
 <part xml:id='section_0e1dfd7788a430cec0c2605e54ef1124'>
 <title>bytecode_audio</title>
 &a4a2ea90d9c18491db8cb91567a57beca;
+&a9302f9d2dffff6bd76ffeaa03a6cf217;
+&a840d53c1e8cee801dd87ed785ff07df0;
 &a41e8bf58ca6ba140e874d12e8ae35945;
 &aa3d73c35cee5d4cd3e628b2ab1d0dfd2;
 &a27ed49c9c43dc553f62ca726e2ba34a3;
+&abdb0e2ed7df877423b69f96a7b6b63de;
+&a044ff55cb23e9a6f7ddcde1d5fa2dc46;
+&acd19eee19f32b69f9994ec809ba5470c;
 &a4fc6f6e2c21ae87f69d9f5d56de07d33;
+&a31f8fdaadc35834455cbc87d8d1f3e33;
 &a3ffe0a6ae73ffadac651c5cc9243cb7d;
 &a61ef7fd7feb35ac899c0085b96a869fa;
 &ab7af7319179c46e537c059d0ac948b64;

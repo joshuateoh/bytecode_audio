@@ -1,22 +1,7 @@
 function audio_startCapture(line)
 // Begins capturing audio
 //
-//    Copyright 2019 Bytecode.
-//    
-//    This program is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 2 of the License, or
-//    (at your option) any later version.
-//    
-//    This program is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//    
-//    You should have received a copy of the GNU General Public License
-//    along with this program.  If not, see <http://www.gnu.org/licenses/
-//
-// Calling Sequence
+// Syntax
 //     audio_startCapture(line)
 //
 // Parameters
@@ -30,20 +15,13 @@ function audio_startCapture(line)
 //    line = audio_getLine(16000,16,1,%t,%t,2,10);
 //    audio_startCapture(line)
 //    // The audio capture process has started. 
-//    // Feel free to say something before running the next line of code.
+//    messagebox("Please say something and then click OK to continue","modal");
 //    audio_snapshot(line)
 //    audio_playSnapshot(line)
 //    audio_stopCapture(line)
 //
 // See also
-//    audio_checkMixer
-//    audio_getLine
-//    audio_getMixers
 //    audio_stopCapture
-//    audio_snapshot
-//    audio_playSnapshot
-//    audio_getSnapshot
-//    audio_saveSnapshot
 //
 // Authors
 //     Joshua T. 

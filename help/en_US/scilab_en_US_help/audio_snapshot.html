@@ -36,12 +36,20 @@
     <p class="refpurpose">Obtain a snapshot of the audio data</p></div>
 
 
+<div class="refsynopsisdiv"><h3 class="title">Syntax</h3>
+   <div class="synopsis"><pre><span class="functionid">audio_snapshot</span><span class="default">(</span><span class="default">line</span><span class="default">)</span>
+<span class="functionid">audio_snapshot</span><span class="default">(</span><span class="default">line</span><span class="default">,</span><span class="default">x</span><span class="default">,</span><span class="default">secByte</span><span class="default">)</span></pre></div></div>
+
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">line :</span>
-            <dd><p class="para">Java object. Audio line.</p></dd></dt></dl></div>
+            <dd><p class="para">Java object. Audio line.</p></dd></dt>
+        <dt><span class="term">x :</span>
+            <dd><p class="para">Double. The number of seconds or the number of bytes.</p></dd></dt>
+        <dt><span class="term">secByte :</span>
+            <dd><p class="para">Boolean. True for seconds, false for bytes.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This function obtains a specific duration of the latest audio data stored in the buffer. This data can then be played, stored as a variable or saved into a file. The duration of the snapshot is set when creating the audio line.</p>
+   <p class="para">This function obtains a snapshot of the latest audio data stored in the buffer. This data can then be played, stored as a variable or saved into a file. The snapshot duration is based on the parameters set when creating the audio line. You can also specify the amount of data in the snapshot in either seconds or bytes.</p>
    <p class="para"></p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
@@ -54,12 +62,7 @@
 <span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">See also</h3>
-   <ul class="itemizedlist"><li class="member"><a href="audio_checkMixer.html" class="link">audio_checkMixer</a> &#8212; Check the lines supported by a selected mixer.</li>
-   <li class="member"><a href="audio_getMixers.html" class="link">audio_getMixers</a> &#8212; Obtain a list of available mixers</li>
-   <li class="member"><a href="audio_getLine.html" class="link">audio_getLine</a> &#8212; Obtains an audio line</li>
-   <li class="member"><a href="audio_startCapture.html" class="link">audio_startCapture</a> &#8212; Begins capturing audio</li>
-   <li class="member"><a href="audio_stopCapture.html" class="link">audio_stopCapture</a> &#8212; Stops the audio capturing process</li>
-   <li class="member"><a href="audio_playSnapshot.html" class="link">audio_playSnapshot</a> &#8212; Plays an audio snapshot</li>
+   <ul class="itemizedlist"><li class="member"><a href="audio_playSnapshot.html" class="link">audio_playSnapshot</a> &#8212; Plays an audio snapshot</li>
    <li class="member"><a href="audio_getSnapshot.html" class="link">audio_getSnapshot</a> &#8212; Imports the audio snapshot data into Scilab</li>
    <li class="member"><a href="audio_saveSnapshot.html" class="link">audio_saveSnapshot</a> &#8212; Saves audio snapshot into a file</li></ul></div>
 
