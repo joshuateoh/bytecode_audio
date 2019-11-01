@@ -18,8 +18,6 @@
 <tocitem target="audio_snapshot" text="audio_snapshot"/>
 <tocitem target="audio_startCapture" text="audio_startCapture"/>
 <tocitem target="audio_stopCapture" text="audio_stopCapture"/>
-<tocitem target="recognizer_setup" text="recognizer_setup"/>
-<tocitem target="speech_recognizer" text="speech_recognizer"/>
 </tocitem>
 </tocitem>
 </toc>
