@@ -1,4 +1,4 @@
-﻿Bytecode Audio Pack Version 0.1
+﻿Bytecode Audio Module Version 1.0
 
 This module is developed by Bytecode to allow audio recording inside SCILAB.
 

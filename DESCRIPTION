@@ -10,7 +10,7 @@ Author: Joshua Teoh
         Tan Chin Luh
 
 Maintainer: Joshua Teoh <joshua.teoh@bytecode-asia.com>
-	    Tan Chin Luh <chinluh.tan@bytecode-asia.com>
+	        Tan Chin Luh <chinluh.tan@bytecode-asia.com>
 
 Category: Scilab development
 
@@ -22,7 +22,7 @@ License: GPL 2.0
 
 ScilabVersion: >= 6.0
 
-Date: 2019-03-15
+Date: 2019-11-01
 
-Description: This module is developed by Bytecode to allow audio recording inside SCILAB.
+Description: Initial release for bytecode audio module. This module is developed by Bytecode to allow audio recording inside SCILAB.
 
