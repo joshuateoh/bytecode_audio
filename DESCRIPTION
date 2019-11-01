@@ -22,6 +22,8 @@ License: GPL 2.0
 
 ScilabVersion: >= 6.0
 
+Depends:
+
 Date: 2019-11-01
 
 Description: Initial release for bytecode audio module. This module is developed by Bytecode to allow audio recording inside SCILAB.
