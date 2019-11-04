@@ -26,6 +26,10 @@ function audio_killLine(line)
 // Authors
 //     Joshua T. 
     
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
     
     line.killLine()
+    
+    jautoUnwrap(bool);
 endfunction

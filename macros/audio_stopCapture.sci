@@ -24,6 +24,12 @@ function audio_stopCapture(line)
 //
 // Authors
 //     Joshua T. 
+
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+
     line.stopAudio()
     disp("Audio capturing has stopped. No new data will be captured.")
+    
+    jautoUnwrap(bool);
 endfunction

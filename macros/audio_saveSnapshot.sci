@@ -17,10 +17,10 @@ function audio_saveSnapshot(line,wavfile)
 //    audio_startCapture(line)
 //    messagebox("Please say something and then click OK to continue","modal");
 //    audio_snapshot(line)
+//    audio_stopCapture(line)
 //    audio_saveSnapshot(line,TMPDIR+"\myaudio.wav")
 //    [audiodata,fs]=wavread(TMPDIR+"\myaudio.wav");
-//    sound(audiodata,fs)
-//    audio_stopCapture(line)
+//    playsnd(audiodata,fs)
 //
 // See also
 //    audio_snapshot
@@ -29,5 +29,11 @@ function audio_saveSnapshot(line,wavfile)
 //
 // Authors
 //     Joshua T. 
+
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+
     line.saveAudioData(wavfile);
+    
+    jautoUnwrap(bool);
 endfunction

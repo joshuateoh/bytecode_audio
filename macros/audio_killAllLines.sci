@@ -25,7 +25,12 @@ function n = audio_killAllLines()
 //
 // Authors
 //     Joshua T. 
+
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
     
     jimport com.bytecode_asia.AudioCaptureV4
     n = AudioCaptureV4.killAllLines()
+    
+    jautoUnwrap(bool);
 endfunction
