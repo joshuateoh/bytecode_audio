@@ -22,7 +22,11 @@ function y = audio_getMixers()
 // Authors
 //     Joshua T. 
 
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
 
     jimport com.bytecode_asia.AudioCaptureV4
-    y = AudioCaptureV4.listMixers()'
+    y = AudioCaptureV4.listMixers()';
+    
+    jautoUnwrap(bool);
 endfunction

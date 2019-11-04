@@ -30,6 +30,9 @@ function audio_snapshot(line,n,secOrByte)
 // Authors
 //     Joshua T. 
 
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+
     rhs = argn(2)
     if rhs == 1 then
         line.snapAudio()
@@ -39,4 +42,5 @@ function audio_snapshot(line,n,secOrByte)
         error(msprintf("%s: Wrong number of input arguments.\n","audio_snapshot"))
     end
     
+    jautoUnwrap(bool);
 endfunction

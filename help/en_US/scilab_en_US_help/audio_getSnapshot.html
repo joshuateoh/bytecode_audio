@@ -46,7 +46,7 @@
             <dd><p class="para">Matrix array. Audio snapshot data</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This function imports the audio snapshot data into a Scilab variable.The audio snapshot was taken using the function audio_snapshot.</p>
+   <p class="para">This function imports the audio snapshot data into a Scilab variable.The audio snapshot data is first taken using the function audio_snapshot.</p>
    <p class="para"></p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
@@ -55,8 +55,10 @@
 <span class="scilabid">audio_startCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
 <a class="scilabcommand" href="scilab://messagebox">messagebox</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0034;</span><span class="scilabstring">Please say something and then click OK to continue</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">modal</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
 <span class="scilabid">audio_snapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
-<span class="scilabid">data</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getSnapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
-<span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<span class="scilabid">data</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getSnapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
+<span class="scilabid">plot</span><span class="scilabopenclose">(</span><span class="scilabid">data</span><span class="scilabopenclose">)</span>
+<span class="scilabid">playsnd</span><span class="scilabopenclose">(</span><span class="scilabid">data</span><span class="scilabdefault">,</span><span class="scilabnumber">16000</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">See also</h3>
    <ul class="itemizedlist"><li class="member"><a href="audio_snapshot.html" class="link">audio_snapshot</a> &#8212; Obtain a snapshot of the audio data</li>

@@ -26,6 +26,9 @@ function audio_startCapture(line)
 // Authors
 //     Joshua T. 
 
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+
     msg = line.captureAudio()
     
     if msg == "OK" then
@@ -39,11 +42,13 @@ function audio_startCapture(line)
             err_msg = "%s: LineUnavailableException - the line is currently in used\n"
             error(msprintf(err_msg,"audio_startCapture"))
         else
-            err_smg = "%s: "+temp+"\n"
+            err_msg = "%s: "+temp+"\n"
             error(msprintf(err_msg,"audio_startCapture"))
         end
         
     end
+    
+    jautoUnwrap(bool);
     
 endfunction
 

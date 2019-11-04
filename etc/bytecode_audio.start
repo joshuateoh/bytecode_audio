@@ -6,7 +6,7 @@
 function bytecode_audiolib = startModule()
 
     TOOLBOX_NAME  = "bytecode_audio";
-    TOOLBOX_TITLE = "Bytecode Audio Module";
+    TOOLBOX_TITLE = "Scilab Audio Module";
 
   mprintf("Start " + TOOLBOX_TITLE + "\n");
 

@@ -12,7 +12,7 @@ function audio_playBuffer(line)
 //
 // Examples
 //    // Requires a microphone 
-//    line = audio_getLine(16000,16,1,%t,%t,2,10);
+//    line = audio_getLine(16000,16,1,%t,%t,2,3);
 //    audio_startCapture(line)
 //    messagebox("Please say something and then click OK to continue","modal");
 //    audio_stopCapture(line)
@@ -24,5 +24,11 @@ function audio_playBuffer(line)
 //
 // Authors
 //     Joshua T. 
+
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+
     line.playAudio(%f)
+    
+    jautoUnwrap(bool);
 endfunction

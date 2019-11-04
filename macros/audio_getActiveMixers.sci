@@ -24,9 +24,13 @@ function [mixerlist,nmixer]=audio_getActiveMixers()
 //
 // Authors
 //     Joshua T. 
+
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
     
     jimport com.bytecode_asia.AudioCaptureV4
     mixerlist = AudioCaptureV4.listActiveMixers()'
     nmixer = AudioCaptureV4.getActiveMixers()
     
+    jautoUnwrap(bool);
 endfunction
