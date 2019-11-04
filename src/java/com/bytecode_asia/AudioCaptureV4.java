@@ -80,7 +80,7 @@ public class AudioCaptureV4 {
          checkMixer(int mixerID)
          listActiveMixers()
          getActiveMixers()
-         byteToShort(byte[] byteData, boolean writeLittleEndian)
+         byteToShort(byte[] byteData, boolean writeBigEndian)
          killAllLines()
     */
 
@@ -164,23 +164,24 @@ public class AudioCaptureV4 {
     } // end getActiveMixers
 
     // Converts byte to short
-    public static short[] byteToShort(byte[] byteData, boolean writeLittleEndian) {
+    public static short[] byteToShort(byte[] byteData, boolean writeBigEndian) {
         short[] data = new short[byteData.length / 2];
         int size = data.length;
         byte lb, hb;
-        if (writeLittleEndian) {
-            for (int i = 0; i < size; i++) {
-                lb = byteData[i * 2];
-                hb = byteData[i * 2 + 1];
-                data[i] = (short) (((short) hb << 8) | lb & 0xff);
-            }
-        } else {
+        // If big-endian
+        if (writeBigEndian) {
             for (int i = 0; i < size; i++) {
                 lb = byteData[i * 2];
                 hb = byteData[i * 2 + 1];
                 data[i] = (short) (((short) lb << 8) | hb & 0xff);
             }
-
+        // else if small-endian
+        } else {
+            for (int i = 0; i < size; i++) {
+                lb = byteData[i * 2];
+                hb = byteData[i * 2 + 1];
+                data[i] = (short) (((short) hb << 8) | lb & 0xff);
+            }
         }
         return data;
     } // end byteToShort
@@ -216,7 +217,7 @@ public class AudioCaptureV4 {
         getAllBuffer()
         saveBuffer(String filepath)
         killLine()
-
+        getChannel()
     */
 
     // This method creates and returns an AudioFormat object for a given set of format parameters.
@@ -347,7 +348,7 @@ public class AudioCaptureV4 {
     // Returns the snapshot audio data
     public short[] getAudioData() {
         //return audioData;
-        return byteToShort(audioData, false);
+        return byteToShort(audioData, bigEndianG);
     } // end getAudioData
 
     // Saves the snapshot audio data in a file
@@ -396,7 +397,7 @@ public class AudioCaptureV4 {
         int capacity = ringbuffer.capacity();
         byte[] audioall = new byte[capacity];
         int mytemp = ringbuffer.getLatest(audioall);
-        return byteToShort(audioall, false);
+        return byteToShort(audioall, bigEndianG);
     } // end getAllBuffer
 
     // Saves the entire ring buffer to a file
@@ -430,6 +431,11 @@ public class AudioCaptureV4 {
                 }
             }
         }
+    }
+
+    // Return number of channels
+    public int getChannel(){
+        return channelsG;
     }
 
 
