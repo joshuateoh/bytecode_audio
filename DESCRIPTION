@@ -22,7 +22,7 @@ License: GPL 2.0
 
 ScilabVersion: >= 6.0
 
-Depends:
+Depends: 
 
 Date: 2019-11-01
 
