@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
 <toc version="1.0">
-<tocitem target="index" text="bytecode_audio">
-<tocitem target="section_0e1dfd7788a430cec0c2605e54ef1124" text="bytecode_audio">
+<tocitem target="index" text="Scilab Audio Module">
+<tocitem target="section_0e1dfd7788a430cec0c2605e54ef1124" text="Scilab Audio Module">
 <tocitem target="audio_checkMixer" text="audio_checkMixer"/>
 <tocitem target="audio_getActiveMixers" text="audio_getActiveMixers"/>
 <tocitem target="audio_getBuffer" text="audio_getBuffer"/>
