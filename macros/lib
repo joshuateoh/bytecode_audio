@@ -2,10 +2,10 @@
 <scilablib name="bytecode_audiolib">
   <macro name="audio_checkMixer" file="audio_checkMixer.bin" md5="4edeae7e7aaf8e9984e80759b17a5bc7"/>
   <macro name="audio_getActiveMixers" file="audio_getActiveMixers.bin" md5="eefa7be22c08d32267d317568abeb5c2"/>
-  <macro name="audio_getBuffer" file="audio_getBuffer.bin" md5="659ecf388da2a26ed0f6c703d8843647"/>
+  <macro name="audio_getBuffer" file="audio_getBuffer.bin" md5="d382cc8d3d431b0c435818dbeb9d4d33"/>
   <macro name="audio_getLine" file="audio_getLine.bin" md5="5199cbc9f8d430fc8cc981f206ad8f5c"/>
   <macro name="audio_getMixers" file="audio_getMixers.bin" md5="e9cf33f1198e95969b088624b2eb669a"/>
-  <macro name="audio_getSnapshot" file="audio_getSnapshot.bin" md5="83251c598b1c874456af873723f30105"/>
+  <macro name="audio_getSnapshot" file="audio_getSnapshot.bin" md5="7c99b126427bdbba6c5db3aa03200218"/>
   <macro name="audio_killAllLines" file="audio_killAllLines.bin" md5="a6ed2c16b1ec99c65601d7eb4e0a4d9d"/>
   <macro name="audio_killLine" file="audio_killLine.bin" md5="f72222ace4379893087abfc665c74cf6"/>
   <macro name="audio_playBuffer" file="audio_playBuffer.bin" md5="4a83cef6b4cec38197d46d8238cb376d"/>

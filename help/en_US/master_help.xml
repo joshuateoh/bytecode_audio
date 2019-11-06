@@ -26,12 +26,12 @@
       xmlns:mml="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:db="http://docbook.org/ns/docbook">
-  <info xml:id='bytecode_audio_manual'>
-    <title>bytecode_audio</title>
+  <info xml:id='scilab_audio_module_manual'>
+    <title>Scilab Audio Module</title>
   </info>
 
 <part xml:id='section_0e1dfd7788a430cec0c2605e54ef1124'>
-<title>bytecode_audio</title>
+<title>Scilab Audio Module</title>
 &a4a2ea90d9c18491db8cb91567a57beca;
 &a9302f9d2dffff6bd76ffeaa03a6cf217;
 &a840d53c1e8cee801dd87ed785ff07df0;

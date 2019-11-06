@@ -7,7 +7,7 @@ mode(-1);
 lines(0);
 
 function main_builder()
-    TOOLBOX_NAME  = "bytecode_audio";
+    TOOLBOX_NAME  = "scilab_audio";
     TOOLBOX_TITLE = "Scilab Audio Module";
     toolbox_dir   = get_absolute_file_path("builder.sce");
 

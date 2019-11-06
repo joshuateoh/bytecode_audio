@@ -38,7 +38,7 @@
         </varlistentry>
         <varlistentry>
             <term>data :</term>
-            <listitem><para> Matrix array. Audio snapshot data</para></listitem>
+            <listitem><para> Matrix array. Audio snapshot data. Data from each channel is stored in separate rows.</para></listitem>
         </varlistentry>
    </variablelist>
 </refsection>
@@ -62,8 +62,8 @@ messagebox("Please say something and then click OK to continue","modal");
 audio_snapshot(line)
 data = audio_getSnapshot(line);
 audio_stopCapture(line)
-plot(data)
-playsnd(data,16000)
+plot(data(1,:))
+playsnd(data(1,:),16000)
 
    ]]></programlisting>
 </refsection>
