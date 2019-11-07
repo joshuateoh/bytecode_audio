@@ -40,3 +40,8 @@ lib
 # Auto generated html
 *.html
 *.xml
+
+# Scilab generated script
+loader*
+cleaner*
+unloader*
