@@ -16,7 +16,7 @@
 
       </td>
       <td width="40%" class="center">
-      	<span class="top"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a></span>
+      	<span class="top"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">Scilab Audio Module</a></span>
 
       </td>
       <td width="30%" class="next">
@@ -29,7 +29,7 @@
 
 
 
-    <span class="path" dir="ltr"><a href="index.html">bytecode_audio</a> &gt;&gt; <a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a> &gt; audio_saveBuffer</span>
+    <span class="path" dir="ltr"><a href="index.html">Scilab Audio Module</a> &gt;&gt; <a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">Scilab Audio Module</a> &gt; audio_saveBuffer</span>
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">audio_saveBuffer</h1>
@@ -51,14 +51,13 @@
 
 <div class="refsection"><h3 class="title">Examples</h3>
    <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabcomment">// Requires a microphone</span>
-<span class="scilabid">line</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getLine</span><span class="scilabopenclose">(</span><span class="scilabnumber">16000</span><span class="scilabdefault">,</span><span class="scilabnumber">16</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">line</span> <span class="scilaboperator">=</span> <span class="scilabid">audio_getLine</span><span class="scilabopenclose">(</span><span class="scilabnumber">16000</span><span class="scilabdefault">,</span><span class="scilabnumber">16</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabconstants">%t</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
 <span class="scilabid">audio_startCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
 <a class="scilabcommand" href="scilab://messagebox">messagebox</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0034;</span><span class="scilabstring">Please say something and then click OK to continue</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">modal</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
-<span class="scilabid">audio_snapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
-<span class="scilabid">audio_saveSnapshot</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabdefault">,</span><span class="scilabconstants">TMPDIR</span><span class="scilaboperator">+</span><span class="scilabstring">&#0034;</span><span class="scilabstring">\myaudio.wav</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span>
+<span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span>
+<span class="scilabid">audio_saveBuffer</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabdefault">,</span><span class="scilabconstants">TMPDIR</span><span class="scilaboperator">+</span><span class="scilabstring">&#0034;</span><span class="scilabstring">\myaudio.wav</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span>
 <span class="scilabopenclose">[</span><span class="scilabid">audiodata</span><span class="scilabdefault">,</span><span class="scilabid">fs</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><a class="scilabmacro" href="scilab://wavread">wavread</a><span class="scilabopenclose">(</span><span class="scilabconstants">TMPDIR</span><span class="scilaboperator">+</span><span class="scilabstring">&#0034;</span><span class="scilabstring">\myaudio.wav</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
-<a class="scilabmacro" href="scilab://sound">sound</a><span class="scilabopenclose">(</span><span class="scilabid">audiodata</span><span class="scilabdefault">,</span><span class="scilabid">fs</span><span class="scilabopenclose">)</span>
-<span class="scilabid">audio_stopCapture</span><span class="scilabopenclose">(</span><span class="scilabid">line</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<a class="scilabmacro" href="scilab://playsnd">playsnd</a><span class="scilabopenclose">(</span><span class="scilabid">audiodata</span><span class="scilabdefault">,</span><span class="scilabid">fs</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">See also</h3>
    <ul class="itemizedlist"><li class="member"><a href="audio_getBuffer.html" class="link">audio_getBuffer</a> &#8212; Retrieve the entire data in the buffer</li>
@@ -77,7 +76,7 @@
 
       </td>
       <td width="40%" class="center">
-      	<span class="top"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">bytecode_audio</a></span>
+      	<span class="top"><a href="section_0e1dfd7788a430cec0c2605e54ef1124.html">Scilab Audio Module</a></span>
 
       </td>
       <td width="30%" class="next">

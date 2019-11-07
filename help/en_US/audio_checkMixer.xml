@@ -55,6 +55,7 @@ A mixer generally supports a line that connects to either the microphone or spea
 <refsection>
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
+disp(audio_getMixers())
 res = audio_checkMixer(0);
 disp(res)
 

@@ -25,5 +25,11 @@ function audio_playSnapshot(line)
 //    audio_saveSnapshot
 // Authors
 //     Joshua T. 
+
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+    
     line.playAudio(%t)
+    
+    jautoUnwrap(bool);
 endfunction

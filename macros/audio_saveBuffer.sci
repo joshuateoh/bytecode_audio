@@ -13,14 +13,13 @@ function audio_saveBuffer(line,wavfile)
 //
 // Examples
 //    // Requires a microphone 
-//    line = audio_getLine(16000,16,1,%t,%t,2,10);
+//    line = audio_getLine(16000,16,1,%t,%t,2,3);
 //    audio_startCapture(line)
 //    messagebox("Please say something and then click OK to continue","modal");
-//    audio_snapshot(line)
-//    audio_saveSnapshot(line,TMPDIR+"\myaudio.wav")
-//    [audiodata,fs]=wavread(TMPDIR+"\myaudio.wav");
-//    sound(audiodata,fs)
 //    audio_stopCapture(line)
+//    audio_saveBuffer(line,TMPDIR+"\myaudio.wav")
+//    [audiodata,fs]=wavread(TMPDIR+"\myaudio.wav");
+//    playsnd(audiodata,fs)
 //
 // See also
 //    audio_getBuffer
@@ -29,5 +28,10 @@ function audio_saveBuffer(line,wavfile)
 // Authors
 //     Joshua T. 
     
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+    
     line.saveBuffer(wavfile);
+    
+    jautoUnwrap(bool);
 endfunction

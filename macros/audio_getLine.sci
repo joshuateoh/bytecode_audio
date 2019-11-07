@@ -36,6 +36,9 @@ function line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,vara
 // Authors
 //     Joshua T. 
 
+    bool = jautoUnwrap();
+    jautoUnwrap(%t);
+
     jimport com.bytecode_asia.AudioCaptureV4
     
     rhs = argn(2);
@@ -49,7 +52,7 @@ function line = audio_getLine(sr,bits,chnls,signed,endian,snap_dur,ring_dur,vara
         error(msprintf("%s: Wrong number of input arguments.\n","audio_getLine"))
     end
     
-    
+    jautoUnwrap(bool);
     
 endfunction
 

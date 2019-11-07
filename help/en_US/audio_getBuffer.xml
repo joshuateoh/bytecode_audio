@@ -38,7 +38,7 @@
         </varlistentry>
         <varlistentry>
             <term>data :</term>
-            <listitem><para> Matrix array. Audio buffer data</para></listitem>
+            <listitem><para> Matrix array. Audio buffer data. Data from each channel is stored in separate rows.</para></listitem>
         </varlistentry>
    </variablelist>
 </refsection>
@@ -56,12 +56,13 @@ This function imports the entire buffer data into a Scilab variable.
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 // Requires a microphone
-line = audio_getLine(16000,16,1,%t,%t,2,10);
+line = audio_getLine(16000,16,1,%t,%t,2,3);
 audio_startCapture(line)
 messagebox("Please say something and then click OK to continue","modal");
 audio_stopCapture(line)
 data = audio_getBuffer(line);
-plot(data)
+plot(data(1,:))
+playsnd(data(1,:),16000)
 
    ]]></programlisting>
 </refsection>
