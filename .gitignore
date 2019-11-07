@@ -15,6 +15,7 @@
 *.la
 *.lo
 *.jar
+lib
 
 # Shared objects (inc. Windows DLLs)
 *.dll
@@ -38,3 +39,4 @@
 
 # Auto generated html
 *.html
+*.xml
